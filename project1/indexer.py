@@ -61,11 +61,11 @@ class Indexer:
                     "type": "string",
                     "multiValued": False
                 },
-                {
-                    "name": "id",
-                    "type": "string",
-                    "multiValued": False
-                },
+#                 {
+#                     "name": "id",
+#                     "type": "string",
+#                     "multiValued": False
+#                 },
                 {
                     "name": "replied_to_tweet_id",
                     "type": "plong",
