@@ -1,0 +1,255 @@
+{
+  "pois": [
+    {
+      "id": 1,
+      "screen_name": "JoeBiden",
+      "country": "USA",
+      "count": 500,
+      "finished": 0,
+      "reply_finished": 0
+    },
+    {
+      "id": 2,
+      "screen_name": "narendramodi",
+      "country": "India",
+      "count": 500,
+      "finished": 0,
+      "reply_finished": 0
+    },
+    {
+      "id": 3,
+      "screen_name": "lopezobrador_",
+      "country": "Mexico",
+      "count": 500,
+      "finished": 0,
+      "reply_finished": 0
+    }
+    
+  ],
+  "keywords": [
+    {
+      "id": 1,
+      "name": "covid19",
+      "count": 100,
+      "lang": "en",
+      "country": "USA",
+      "finished": 0
+    },
+    {
+      "id": 2,
+      "name": "quarantine",
+      "count": 100,
+      "lang": "en",
+      "country": "USA",
+      "finished": 0
+    },
+    {
+      "id": 3,
+      "name": "wuhan",
+      "count": 100,
+      "lang": "en",
+      "country": "USA",
+      "finished": 0
+    },
+    {
+      "id": 4,
+      "name": "संगरोध",
+      "count": 100,
+      "lang": "hi",
+      "country": "India",
+      "finished": 0
+    },
+    {
+      "id": 5,
+      "name": "मुखौटा",
+      "count": 100,
+      "lang": "hi",
+      "country": "India",
+      "finished": 0
+    },
+    {
+      "id": 6,
+      "name": "pandemic",
+      "count": 100,
+      "lang": "en",
+      "country": "USA",
+      "finished": 0
+    },
+    {
+      "id": 7,
+      "name": "delta variant",
+      "count": 100,
+      "lang": "en",
+      "country": "USA",
+      "finished": 0
+    },
+    {
+      "id": 8,
+      "name": "lockdown",
+      "count": 100,
+      "lang": "en",
+      "country": "USA",
+      "finished": 0
+    },
+    {
+      "id": 9,
+      "name": "coronavirus",
+      "count": 100,
+      "lang": "en",
+      "country": "USA",
+      "finished": 0
+    },
+    {
+      "id": 10,
+      "name": "कोरोनावाइरस",
+      "count": 100,
+      "lang": "hi",
+      "country": "India",
+      "finished": 0
+    },
+    {
+      "id": 11,
+      "name": "virus",
+      "count": 100,
+      "lang": "en",
+      "country": "USA",
+      "finished": 0
+    },
+    {
+      "id": 12,
+      "name": "cuarentena",
+      "count": 100,
+      "lang": "es",
+      "country": "Mexico",
+      "finished": 0
+    },
+    {
+      "id": 13,
+      "name": "pandemia",
+      "count": 100,
+      "lang": "es",
+      "country": "Mexico",
+      "finished": 0
+    },
+    {
+      "id": 14,
+      "name": "cierre de emergencia",
+      "count": 100,
+      "lang": "es",
+      "country": "Mexico",
+      "finished": 0
+    },
+    {
+      "id": 15,
+      "name": "vaccine mandate",
+      "count": 100,
+      "lang": "en",
+      "country": "USA",
+      "finished": 0
+    },
+    {
+      "id": 16,
+      "name": "vaccination",
+      "count": 100,
+      "lang": "en",
+      "country": "USA",
+      "finished": 0
+    },
+    {
+      "id": 17,
+      "name": "moderna",
+      "count": 100,
+      "lang": "en",
+      "country": "USA",
+      "finished": 0
+    },
+    {
+      "id": 18,
+      "name": "covid vaccine",
+      "count": 100,
+      "lang": "en",
+      "country": "USA",
+      "finished": 0
+    },
+    {
+      "id": 19,
+      "name": "टीका",
+      "count": 100,
+      "lang": "hi",
+      "country": "India",
+      "finished": 0
+    },
+    {
+      "id": 20,
+      "name": "कोविड का टीका",
+      "count": 100,
+      "lang": "hi",
+      "country": "India",
+      "finished": 0
+    },
+    {
+      "id": 21,
+      "name": "vacunación",
+      "count": 100,
+      "lang": "es",
+      "country": "Mexico",
+      "finished": 0
+    },
+    {
+      "id": 22,
+      "name": "efectos secundarios",
+      "count": 100,
+      "lang": "es",
+      "country": "Mexico",
+      "finished": 0
+    },
+    {
+      "id": 23,
+      "name": "eficacia",
+      "count": 100,
+      "lang": "es",
+      "country": "Mexico",
+      "finished": 0
+    },
+    {
+      "id": 24,
+      "name": "vacuna",
+      "count": 100,
+      "lang": "es",
+      "country": "Mexico",
+      "finished": 0
+    },
+    {
+      "id": 25,
+      "name": "प्रभाव",
+      "count": 100,
+      "lang": "hi",
+      "country": "India",
+      "finished": 0
+    },
+    {
+      "id": 26,
+      "name": "दुष्प्रभाव",
+      "count": 100,
+      "lang": "hi",
+      "country": "India",
+      "finished": 0
+    },
+    {
+      "id": 27,
+      "name": "pfizer",
+      "count": 100,
+      "lang": "en",
+      "country": "USA",
+      "finished": 0
+    },
+    {
+      "id": 28,
+      "name": "side effects",
+      "count": 100,
+      "lang": "en",
+      "country": "USA",
+      "finished": 0
+    }
+  ]
+}
