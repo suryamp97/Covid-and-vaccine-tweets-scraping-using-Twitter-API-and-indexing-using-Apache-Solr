@@ -45,8 +45,8 @@ def main():
     for i in range(len(pois)):
         if pois[i]["finished"] == 0:
             print(f"---------- collecting tweets for poi: {pois[i]['screen_name']}")
-
-            raw_tweets = twitter.get_tweets_by_poi_screen_name()  # pass args as needed
+            screen_name = pois[i]['screen_name']
+            raw_tweets = twitter.get_tweets_by_poi_screen_name(screen_name)  # pass args as needed
 
             processed_tweets = []
             for tw in raw_tweets:
@@ -64,11 +64,11 @@ def main():
             save_file(processed_tweets, f"poi_{pois[i]['id']}.pkl")
             print("------------ process complete -----------------------------------")
 
-    for i in range(len(keywords)):
+    for i in range(14,len(keywords)):
         if keywords[i]["finished"] == 0:
             print(f"---------- collecting tweets for keyword: {keywords[i]['name']}")
-
-            raw_tweets = twitter.get_tweets_by_lang_and_keyword()  # pass args as needed
+            keyword = keywords[i]['name']
+            raw_tweets = twitter.get_tweets_by_lang_and_keyword(keyword)  # pass args as needed
 
             processed_tweets = []
             for tw in raw_tweets:
