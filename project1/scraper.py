@@ -64,28 +64,28 @@ def main():
             save_file(processed_tweets, f"poi_{pois[i]['id']}.pkl")
             print("------------ process complete -----------------------------------")
 
-    for i in range(14,len(keywords)):
-        if keywords[i]["finished"] == 0:
-            print(f"---------- collecting tweets for keyword: {keywords[i]['name']}")
-            keyword = keywords[i]['name']
-            raw_tweets = twitter.get_tweets_by_lang_and_keyword(keyword)  # pass args as needed
+#     for i in range(14,len(keywords)):
+#         if keywords[i]["finished"] == 0:
+#             print(f"---------- collecting tweets for keyword: {keywords[i]['name']}")
+#             keyword = keywords[i]['name']
+#             raw_tweets = twitter.get_tweets_by_lang_and_keyword(keyword)  # pass args as needed
 
-            processed_tweets = []
-            for tw in raw_tweets:
-                processed_tweets.append(TWPreprocessor.preprocess(tw))
+#             processed_tweets = []
+#             for tw in raw_tweets:
+#                 processed_tweets.append(TWPreprocessor.preprocess(tw))
 
-            indexer.create_documents(processed_tweets)
+#             indexer.create_documents(processed_tweets)
 
-            keywords[i]["finished"] = 1
-            keywords[i]["collected"] = len(processed_tweets)
+#             keywords[i]["finished"] = 1
+#             keywords[i]["collected"] = len(processed_tweets)
 
-            write_config({
-                "pois": pois, "keywords": keywords
-            })
+#             write_config({
+#                 "pois": pois, "keywords": keywords
+#             })
 
-            save_file(processed_tweets, f"keywords_{keywords[i]['id']}.pkl")
+#             save_file(processed_tweets, f"keywords_{keywords[i]['id']}.pkl")
 
-            print("------------ process complete -----------------------------------")
+#             print("------------ process complete -----------------------------------")
 
     if reply_collection_knob:
         # Write a driver logic for reply collection, use the tweets from the data files for which the replies are to collected.
