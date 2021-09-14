@@ -8,8 +8,8 @@ import tweepy
 
 class Twitter:
     def __init__(self):
-        self.auth = tweepy.OAuthHandler("", "")
-        self.auth.set_access_token("", "")
+        self.auth = tweepy.OAuthHandler("AC7WkBbTptQM1F9vPvaWMnPu0", "6Kv4MuuLHX3FvB0PxNLZaa1ajyIIrnGqVQriBvmYzGD8u2fD3O")
+        self.auth.set_access_token("1433835629763338242-SMviK8BJ5FcBnrrYBj9CMWIoDRX8Uu", "8hcho5OJ03WadpgMjfEgvUhzX3sOJ3DNWoIvOAyqc0sdc")
         self.api = tweepy.API(self.auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 
     def _meet_basic_tweet_requirements(self):
@@ -19,7 +19,8 @@ class Twitter:
         '''
         raise NotImplementedError
 
-    def get_tweets_by_poi_screen_name(self):
+    def get_tweets_by_poi_screen_name(self, screen_name):
+        
         '''
         Use user_timeline api to fetch POI related tweets, some postprocessing may be required.
         :return: List
