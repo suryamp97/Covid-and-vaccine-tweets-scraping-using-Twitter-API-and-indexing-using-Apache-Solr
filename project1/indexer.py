@@ -10,7 +10,7 @@ import requests
 # https://tecadmin.net/install-apache-solr-on-ubuntu/
 
 
-CORE_NAME = "IRF21P1"
+CORE_NAME = "TESTCORE_1"
 AWS_IP = "localhost"
 
 
@@ -49,81 +49,81 @@ class Indexer:
                 },
                 {
                     "name": "poi_id",
-                    "type": "string",
+                    "type": "plong",
                     "multiValued": False
                 }, {
                     "name": "verified",
-                    "type": "string",
+                    "type": "boolean",
                     "multiValued": False
                 },
                 {
                     "name": "country",
-                    "type": "pint",
+                    "type": "string",
                     "multiValued": False
                 },
                 {
                     "name": "id",
-                    "type": "plongs",
-                    "multiValued": True
+                    "type": "string",
+                    "multiValued": False
                 },
                 {
                     "name": "replied_to_tweet_id",
-                    "type": "string",
+                    "type": "plong",
                     "multiValued": False
                 },
                 {
                     "name": "replied_to_user_id",
-                    "type": "string",
+                    "type": "plong",
                     "multiValued": False
                 }, 
                 {
                     "name": "reply_text",
-                    "type": "string",
+                    "type": "text_general",
                     "multiValued": False
                 },
                 {
                     "name": "tweet_text",
-                    "type": "pint",
+                    "type": "text_general",
                     "multiValued": False
                 },
                 {
                     "name": "tweet_lang",
-                    "type": "plongs",
-                    "multiValued": True
+                    "type": "string",
+                    "multiValued": False
                 },
                 {
                     "name": "text_xx",
-                    "type": "string",
+                    "type": "text_general",
                     "multiValued": False
                 },
                 {
                     "name": "hashtags",
                     "type": "string",
-                    "multiValued": False
+                    "multiValued": True
                 }, 
                 {
                     "name": "mentions",
                     "type": "string",
-                    "multiValued": False
+                    "multiValued": True
                 },
                 {
                     "name": "tweet_urls",
-                    "type": "pint",
-                    "multiValued": False
+                    "type": "string",
+                    "multiValued": True
                 },
                 {
                     "name": "tweet_emoticons",
-                    "type": "plongs",
+                    "type": "string",
                     "multiValued": True
                 },
                 {
                     "name": "tweet_date",
-                    "type": "string",
+                    "type": "pdate",
                     "multiValued": False
                 },
                 {
                     "name": "geolocation",
-                    "type": "pint",
+                    "type": "string",
                     "multiValued": False
                 }
             ]
