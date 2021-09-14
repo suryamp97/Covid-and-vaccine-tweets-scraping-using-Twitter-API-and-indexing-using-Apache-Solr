@@ -40,11 +40,36 @@ class Indexer:
         print(self.connection.add(docs))
 
     def add_fields(self):
-        '''
-        Define all the fields that are to be indexed in the core. Refer to the project doc for more details
-        :return:
-        '''
-        raise NotImplementedError
+        data = {
+            "add-field": [
+                {
+                    "name": "first_name",
+                    "type": "string",
+                    "multiValued": False
+                },
+                {
+                    "name": "last_name",
+                    "type": "string",
+                    "multiValued": False
+                }, {
+                    "name": "email",
+                    "type": "string",
+                    "multiValued": False
+                },
+                {
+                    "name": "age",
+                    "type": "pint",
+                    "multiValued": False
+                },
+                {
+                    "name": "pincodes",
+                    "type": "plongs",
+                    "multiValued": True
+                },
+            ]
+        }
+
+        print(requests.post(self.solr_url + CORE_NAME + "/schema", json=data).json())
 
 
 if __name__ == "__main__":
