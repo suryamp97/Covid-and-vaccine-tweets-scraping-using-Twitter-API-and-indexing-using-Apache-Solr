@@ -43,29 +43,89 @@ class Indexer:
         data = {
             "add-field": [
                 {
-                    "name": "first_name",
+                    "name": "poi_name",
                     "type": "string",
                     "multiValued": False
                 },
                 {
-                    "name": "last_name",
+                    "name": "poi_id",
                     "type": "string",
                     "multiValued": False
                 }, {
-                    "name": "email",
+                    "name": "verified",
                     "type": "string",
                     "multiValued": False
                 },
                 {
-                    "name": "age",
+                    "name": "country",
                     "type": "pint",
                     "multiValued": False
                 },
                 {
-                    "name": "pincodes",
+                    "name": "id",
                     "type": "plongs",
                     "multiValued": True
                 },
+                {
+                    "name": "replied_to_tweet_id",
+                    "type": "string",
+                    "multiValued": False
+                },
+                {
+                    "name": "replied_to_user_id",
+                    "type": "string",
+                    "multiValued": False
+                }, 
+                {
+                    "name": "reply_text",
+                    "type": "string",
+                    "multiValued": False
+                },
+                {
+                    "name": "tweet_text",
+                    "type": "pint",
+                    "multiValued": False
+                },
+                {
+                    "name": "tweet_lang",
+                    "type": "plongs",
+                    "multiValued": True
+                },
+                {
+                    "name": "text_xx",
+                    "type": "string",
+                    "multiValued": False
+                },
+                {
+                    "name": "hashtags",
+                    "type": "string",
+                    "multiValued": False
+                }, 
+                {
+                    "name": "mentions",
+                    "type": "string",
+                    "multiValued": False
+                },
+                {
+                    "name": "tweet_urls",
+                    "type": "pint",
+                    "multiValued": False
+                },
+                {
+                    "name": "tweet_emoticons",
+                    "type": "plongs",
+                    "multiValued": True
+                },
+                {
+                    "name": "tweet_date",
+                    "type": "string",
+                    "multiValued": False
+                },
+                {
+                    "name": "geolocation",
+                    "type": "pint",
+                    "multiValued": False
+                }
             ]
         }
 
