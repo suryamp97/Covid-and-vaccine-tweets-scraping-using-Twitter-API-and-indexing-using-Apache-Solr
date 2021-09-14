@@ -7,7 +7,7 @@ import json
 import datetime
 import pandas as pd
 from twitter import Twitter
-from tweet_preprocessor import TWPreprocessor
+#from tweet_preprocessor import TWPreprocessor
 from indexer import Indexer
 
 reply_collection_knob = False
