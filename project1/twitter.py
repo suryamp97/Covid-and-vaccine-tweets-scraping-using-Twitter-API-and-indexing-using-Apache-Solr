@@ -25,11 +25,11 @@ class Twitter:
         Use user_timeline api to fetch POI related tweets, some postprocessing may be required.
         :return: List
         '''
-        statuses = self.api.user_timeline(screen_name, count = 1)
-        print("\n")
-        print(statuses)
-        print("\n")
-        return statuses
+        tweets = []
+        for tweet in tweepy.Cursor(api.user_timeline, screen_name=screen_name, count=10):
+            tweet.append(tweet._json)
+
+        return tweets
 
     def get_tweets_by_lang_and_keyword(self):
         '''
