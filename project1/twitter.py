@@ -27,7 +27,7 @@ class Twitter:
         '''
         statuses = self.api.user_timeline(screen_name, count = 50)
         for status in statuses:
-            print status["user"]["screen_name"]
+            print (status["user"]["screen_name"])
             print(type(status))
         return statuses
 
