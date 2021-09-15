@@ -25,10 +25,8 @@ class Twitter:
         Use user_timeline api to fetch POI related tweets, some postprocessing may be required.
         :return: List
         '''
-        statuses = self.api.user_timeline(screen_name, count = 50)
-        for status in statuses:
-            print (status["user"]["screen_name"])
-            print(type(status))
+        statuses = self.api.user_timeline(screen_name, count = 10)
+        print(type(status))
         return statuses
 
     def get_tweets_by_lang_and_keyword(self):
