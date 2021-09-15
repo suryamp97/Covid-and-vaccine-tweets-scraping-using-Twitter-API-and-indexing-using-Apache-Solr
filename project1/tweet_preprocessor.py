@@ -18,9 +18,10 @@ class TWPreprocessor:
         :param tweet:
         :return: dict
         '''
-        
+        tw = {}
+        tw["id"]=tweet["id"]
 
-        raise NotImplementedError
+        return tw
 
 
 def _get_entities(tweet, type=None):
