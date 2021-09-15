@@ -62,7 +62,7 @@ def main():
                 "pois": pois, "keywords": keywords
             })
 
-            save_file(processed_tweets, f"poi_{pois[i]['id']}.pkl")
+            #save_file(processed_tweets, f"poi_{pois[i]['id']}.pkl")
             print("------------ process complete -----------------------------------")
 
 #     for i in range(14,len(keywords)):
