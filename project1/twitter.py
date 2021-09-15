@@ -26,7 +26,9 @@ class Twitter:
         :return: List
         '''
         statuses = self.api.user_timeline(screen_name, count = 50)
-        print(statuses)
+        for status in statuses:
+            print status["user"]["screen_name"]
+            print(type(status))
         return statuses
 
     def get_tweets_by_lang_and_keyword(self):
