@@ -19,9 +19,22 @@ class TWPreprocessor:
         :return: dict
         '''
         tw = {}
-        tw["poi_id"]    = tweet["user"]["id"]
-        tw["poi_name"]  = tweet["user"]["screen_name"]
-        tw["id"]        = tweet["id"]
+        lang = tweet["lang"]
+        if lang=="en":
+            country="USA"
+        if lang=="es":
+            country="MEXICO"
+        if lang=="hi":
+            country="INDIA"
+
+        tw["id"]            = tweet["id"]
+        tw["country"]       = country if (tweet["place"]["country"] is None) else tweet["place"]["country"]
+        tw["tweet_lang"]    = tweet["lang"]
+        tw["tweet_text"]    = tweet["text"]
+        #tw["tweet_date"]    = tweet["id"]
+        tw["verified"]      = tweet["user"]["verified"]
+        tw["poi_id"]        = tweet["user"]["id"]
+        tw["poi_name"]      = tweet["user"]["screen_name"]
 
         return tw
 
