@@ -50,9 +50,8 @@ def main():
 
             processed_tweets = []
             for tw in raw_tweets:
-               # processed_tweets.append(TWPreprocessor.preprocess(tw))
-                
-                processed_tweets.append(tw)
+                processed_tweets.append(TWPreprocessor.preprocess(tw))
+
             print(processed_tweets)
             indexer.create_documents(processed_tweets)
 
