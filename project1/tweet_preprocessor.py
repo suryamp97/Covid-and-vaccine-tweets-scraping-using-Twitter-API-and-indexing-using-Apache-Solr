@@ -18,6 +18,11 @@ class TWPreprocessor:
         :param tweet:
         :return: dict
         '''
+        statuses = {}
+        for status in tweet:
+            poi_name = status["user"]["screen_name"]
+            poi_id = status["user"]["id"]
+            verified = 
 
         raise NotImplementedError
 
