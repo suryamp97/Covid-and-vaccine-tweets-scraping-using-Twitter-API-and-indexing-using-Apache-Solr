@@ -19,7 +19,9 @@ class TWPreprocessor:
         :return: dict
         '''
         tw = {}
-        tw["id"]=tweet["id"]
+        tw["poi_id"]    = tweet["user"]["id"]
+        tw["poi_name"]  = tweet["user"]["screen_name"]
+        tw["id"]        = tweet["id"]
 
         return tw
 
