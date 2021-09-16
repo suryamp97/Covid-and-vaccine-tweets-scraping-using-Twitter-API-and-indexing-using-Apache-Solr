@@ -86,12 +86,24 @@ def _text_cleaner(text):
         if (emo in clean_text):
             clean_text = clean_text.replace(emo, '')
             emojis.append(emo)
-
-    clean_text = preprocessor.clean(text)
+    
+    #removing punctuations
+    punc = "!()-[]{};:'\"\,<>./?@#$%^&*_~"
+    for p in punc:
+        if (p in clean_text):
+            clean_text =  clean_text.replace(p,'')
+        
+    #removing hashtags, urls and @mentions
+    clean_text = re.sub("@[A-Za-z0-9]+","",clean_text)
+    clean_text = re.sub("#[A-Za-z0-9]+","",clean_text)
+    clean_text = re.sub(r"(?:\@|http?\://|https?\://|www)\S+", "", clean_text)
+    
+    
     # preprocessor.set_options(preprocessor.OPT.EMOJI, preprocessor.OPT.SMILEY)
     # emojis= preprocessor.parse(text)
+    
 
-    return clean_text, emojis
+    return clean_text
 
 
 def _get_tweet_date(tweet_date):
