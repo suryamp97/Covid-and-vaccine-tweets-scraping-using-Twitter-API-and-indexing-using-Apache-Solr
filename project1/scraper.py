@@ -52,7 +52,7 @@ def main():
             for tw in raw_tweets:
                 processed_tweets.append(TWPreprocessor.preprocess(tw))
 
-            print(processed_tweets)
+            print(processed_tweets["poi_name"])
             indexer.create_documents(processed_tweets)
 
             pois[i]["finished"] = 1
