@@ -23,16 +23,16 @@ class TWPreprocessor:
         country=""
         if lang=="en":
             country="USA"
-            clean_text = re.sub(r"(http|https|www|@|#)\S+", " ", tweet["text"])
-            tw["text_en"]=_text_cleaner(clean_text)
+            #clean_text = re.sub(r"(http|https|www|@|#)\S+", " ", tweet["text"])
+            tw["text_en"]=_text_cleaner(tweet["text"])
         if lang=="es":
             country="MEXICO"
-            clean_text = re.sub(r"(http|https|www|@|#)\S+", " ", tweet["text"])
-            tw["text_es"]=_text_cleaner(clean_text)
+            #clean_text = re.sub(r"(http|https|www|@|#)\S+", " ", tweet["text"])
+            tw["text_es"]=_text_cleaner(tweet["text"])
         if lang=="hi":
             country="INDIA"
-            clean_text = re.sub(r"(http|https|www|@|#)\S+", " ", tweet["text"])
-            tw["text_hi"]=_text_cleaner(clean_text)
+            #clean_text = re.sub(r"(http|https|www|@|#)\S+", " ", tweet["text"])
+            tw["text_hi"]=_text_cleaner(tweet["text"])
 
         tw["id"]            = tweet["id"]
         tw["country"]       = country
