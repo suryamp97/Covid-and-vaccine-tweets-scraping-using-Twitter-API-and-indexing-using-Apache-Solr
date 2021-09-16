@@ -20,6 +20,7 @@ class TWPreprocessor:
         '''
         tw = {}
         lang = tweet["lang"]
+        country=""
         if lang=="en":
             country="USA"
         if lang=="es":
