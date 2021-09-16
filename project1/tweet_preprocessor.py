@@ -38,7 +38,7 @@ class TWPreprocessor:
         tw["country"]       = country
         tw["tweet_lang"]    = tweet["lang"]
         tw["tweet_text"]    = tweet["text"]
-        tw["tweet_date"]    = _get_tweet_date(tweet["created_at"])
+        tw["tweet_date"]    = str(_get_tweet_date(tweet["created_at"]))
         print(tw["tweet_date"])
         print(type(tw["tweet_date"]))
         tw["verified"]      = tweet["user"]["verified"]
