@@ -23,13 +23,16 @@ class TWPreprocessor:
         country=""
         if lang=="en":
             country="USA"
-            tw["text_en"]=_text_cleaner(tweet["text"])
+            clean_text = re.sub(r"(http|https|www|@|#)\S+", " ", tweet["text"])
+            tw["text_en"]=_text_cleaner(clean_text)
         if lang=="es":
             country="MEXICO"
-            tw["text_es"]=_text_cleaner(tweet["text"])
+            clean_text = re.sub(r"(http|https|www|@|#)\S+", " ", tweet["text"])
+            tw["text_es"]=_text_cleaner(clean_text)
         if lang=="hi":
             country="INDIA"
-            tw["text_hi"]=_text_cleaner(tweet["text"])
+            clean_text = re.sub(r"(http|https|www|@|#)\S+", " ", tweet["text"])
+            tw["text_hi"]=_text_cleaner(clean_text)
 
         tw["id"]            = tweet["id"]
         tw["country"]       = country
@@ -65,9 +68,6 @@ def _get_entities(tweet, type=None):
 
 
 def _text_cleaner(text):
-    
-    #removing hashtags, urls and @mentions
-    clean_text = re.sub(r"(http|https|www|@|#)\S+", " ", clean_text)
     
     emoticons_happy = list([
         ':-)', ':)', ';)', ':o)', ':]', ':3', ':c)', ':>', '=]', '8)', '=)', ':}',
