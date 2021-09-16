@@ -94,8 +94,8 @@ def _text_cleaner(text):
             clean_text =  clean_text.replace(p,'')
         
     #removing hashtags, urls and @mentions
-    clean_text = re.sub("@\S+","",clean_text)
-    clean_text = re.sub("#\S+","",clean_text)
+    clean_text = re.sub("(@)\S+", "", clean_text)
+    clean_text = re.sub("(#)\S+", "", clean_text)
     clean_text = re.sub("(http|https|www)\S+", "", clean_text)
     
     
