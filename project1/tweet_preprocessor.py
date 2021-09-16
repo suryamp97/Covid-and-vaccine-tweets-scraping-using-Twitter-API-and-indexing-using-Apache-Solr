@@ -88,7 +88,7 @@ def _text_cleaner(text):
             emojis.append(emo)
     
     #removing punctuations
-    punc = "!()-[]{};:'\"\,<>./?@#$%^&*_~"
+    punc = "!()-[]{};:'\"\,<>./?$%^&*_~"
     for p in punc:
         if (p in clean_text):
             clean_text =  clean_text.replace(p,'')
