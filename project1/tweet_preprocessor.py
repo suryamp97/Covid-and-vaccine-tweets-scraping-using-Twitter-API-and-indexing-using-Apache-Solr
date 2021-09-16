@@ -87,14 +87,16 @@ def _text_cleaner(text):
             clean_text = clean_text.replace(emo, '')
             emojis.append(emo)
     
+    #removing hashtags, urls and @mentions
+    clean_text = re.sub(r"(http|https|www|@|#)\S+", " ", clean_text)
+    
     #removing punctuations
     punc = "!()-[]{};:'\"\,<>./?$%^&*_~"
     for p in punc:
         if (p in clean_text):
             clean_text =  clean_text.replace(p,'')
         
-    #removing hashtags, urls and @mentions
-    clean_text = re.sub(r"(http|https|www|@|#)\S+", " ", clean_text)
+    
     
     
     # preprocessor.set_options(preprocessor.OPT.EMOJI, preprocessor.OPT.SMILEY)
