@@ -105,7 +105,7 @@ def _text_cleaner(text):
 
 
 def _get_tweet_date(tweet_date):
-    return _hour_rounder(datetime.datetime.strftime(tweet_date, '%a %b %d %H:%M:%S +0000 %Y'))
+    return _hour_rounder(datetime.datetime.strptime(tweet_date, '%a %b %d %H:%M:%S +0000 %Y'))
 
 
 def _hour_rounder(t):
