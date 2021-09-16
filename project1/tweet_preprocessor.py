@@ -23,13 +23,13 @@ class TWPreprocessor:
         country=""
         if lang=="en":
             country="USA"
-            tw["text_en"]=tweet["text"]
+            tw["text_en"]=_text_cleaner(tweet["text"])
         if lang=="es":
             country="MEXICO"
-            tw["text_es"]=tweet["text"]
+            tw["text_es"]=_text_cleaner(tweet["text"])
         if lang=="hi":
             country="INDIA"
-            tw["text_hi"]=tweet["text"]
+            tw["text_hi"]=_text_cleaner(tweet["text"])
 
         tw["id"]            = tweet["id"]
         tw["country"]       = country
