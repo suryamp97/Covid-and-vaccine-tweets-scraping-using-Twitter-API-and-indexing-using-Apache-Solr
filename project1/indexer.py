@@ -92,8 +92,18 @@ class Indexer:
                     "multiValued": False
                 },
                 {
-                    "name": "text_xx",
-                    "type": "text_general",
+                    "name": "text_en",
+                    "type": "text_en",
+                    "multiValued": False
+                },
+                {
+                    "name": "text_es",
+                    "type": "text_es",
+                    "multiValued": False
+                },
+                {
+                    "name": "text_hi",
+                    "type": "text_hi",
                     "multiValued": False
                 },
                 {
