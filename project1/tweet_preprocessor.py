@@ -65,6 +65,10 @@ def _get_entities(tweet, type=None):
 
 
 def _text_cleaner(text):
+    
+    #removing hashtags, urls and @mentions
+    clean_text = re.sub(r"(http|https|www|@|#)\S+", " ", clean_text)
+    
     emoticons_happy = list([
         ':-)', ':)', ';)', ':o)', ':]', ':3', ':c)', ':>', '=]', '8)', '=)', ':}',
         ':^)', ':-D', ':D', '8-D', '8D', 'x-D', 'xD', 'X-D', 'XD', '=-D', '=D',
@@ -87,8 +91,7 @@ def _text_cleaner(text):
             clean_text = clean_text.replace(emo, '')
             emojis.append(emo)
     
-    #removing hashtags, urls and @mentions
-    clean_text = re.sub(r"(http|https|www|@|#)\S+", " ", clean_text)
+
     
     #removing punctuations
     punc = "!()-[]{};:'\"\,<>./?$%^&*_~"
