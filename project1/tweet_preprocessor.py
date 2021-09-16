@@ -28,7 +28,7 @@ class TWPreprocessor:
             country="INDIA"
 
         tw["id"]            = tweet["id"]
-        tw["country"]       = country if (tweet["place"]["country"] == None) else tweet["place"]["country"]
+        tw["country"]       = country if (tweet["place"]["country"] is None) else tweet["place"]["country"]
         tw["tweet_lang"]    = tweet["lang"]
         tw["tweet_text"]    = tweet["text"]
         #tw["tweet_date"]    = tweet["id"]
