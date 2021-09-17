@@ -42,7 +42,7 @@ def main():
     pois = config["pois"]
     keywords = config["keywords"]
 
-    for i in range(3):
+    for i in range(3,6):
         if pois[i]["finished"] == 0:
             print(f"---------- collecting tweets for poi: {pois[i]['screen_name']}")
             screen_name = pois[i]['screen_name']
