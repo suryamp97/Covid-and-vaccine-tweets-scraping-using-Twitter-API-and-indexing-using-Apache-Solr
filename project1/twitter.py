@@ -26,11 +26,15 @@ class Twitter:
         :return: List
         '''
         tweets = []
-        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=1500).items(1500):
-            c=0;
-            txt_ = tweet._json["text"]
-            if tw_json["text"]
-            tweets.append(tweet._json)
+        c=0
+        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=1500).items(1500):                    
+            if tweet.retweeted :
+                c=c+1
+                if c<225:
+                    tweets.append(tweet._json)
+            else 
+                tweets.append(tweet._json)
+
         #print(tweets)
         return tweets
 
