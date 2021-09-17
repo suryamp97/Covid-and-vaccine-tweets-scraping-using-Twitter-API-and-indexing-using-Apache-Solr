@@ -57,15 +57,11 @@ class Indexer:
                     "name": "verified",
                     "type": "boolean",
                     "multiValued": False,
-                    "indexed":True,
-                    "stored":True
                 },
                 {
                     "name": "country",
                     "type": "string",
                     "multiValued": False,
-                    "indexed":True,
-                    "stored":True
                 },
 #                 {
 #                     "name": "id",
@@ -86,85 +82,61 @@ class Indexer:
                     "name": "reply_text",
                     "type": "text_general",
                     "multiValued": False,
-                    "indexed":True,
-                    "stored":True
                 },
                 {
                     "name": "tweet_text",
                     "type": "text_general",
                     "multiValued": False,
-                    "indexed":True,
-                    "stored":True
                 },
                 {
                     "name": "tweet_lang",
                     "type": "string",
                     "multiValued": False,
-                    "indexed":True,
-                    "stored":True
                 },
                 {
                     "name": "text_en",
                     "type": "text_en",
                     "multiValued": False,
-                    "indexed":True,
-                    "stored":True
                 },
                 {
                     "name": "text_es",
                     "type": "text_es",
                     "multiValued": False,
-                    "indexed":True,
-                    "stored":True
                 },
                 {
                     "name": "text_hi",
                     "type": "text_hi",
                     "multiValued": False,
-                    "indexed":True,
-                    "stored":True
                 },
                 {
                     "name": "hashtags",
                     "type": "string",
                     "multiValued": True,
-                    "indexed":True,
-                    "stored":True
                 }, 
                 {
                     "name": "mentions",
                     "type": "string",
                     "multiValued": True,
-                    "indexed":True,
-                    "stored":True
                 },
                 {
                     "name": "tweet_urls",
                     "type": "string",
                     "multiValued": True,
-                    "indexed":True,
-                    "stored":True
                 },
                 {
                     "name": "tweet_emoticons",
                     "type": "string",
                     "multiValued": True,
-                    "indexed":True,
-                    "stored":True
                 },
                 {
                     "name": "tweet_date",
                     "type": "pdate",
                     "multiValued": False,
-                    "indexed":True,
-                    "stored":True
                 },
                 {
                     "name": "geolocation",
                     "type": "string",
                     "multiValued": False,
-                    "indexed":True,
-                    "stored":True
                 }
             ]
         }
