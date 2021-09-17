@@ -26,7 +26,7 @@ class Twitter:
         :return: List
         '''
         tweets = []
-        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=5).items(5):
+        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=50).items(50):
             tweets.append(tweet._json)
         #print(tweets)
         return tweets
