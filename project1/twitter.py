@@ -32,7 +32,7 @@ class Twitter:
                 c=c+1
                 if c<225:
                     tweets.append(tweet._json)
-            else 
+            else :
                 tweets.append(tweet._json)
 
         #print(tweets)
