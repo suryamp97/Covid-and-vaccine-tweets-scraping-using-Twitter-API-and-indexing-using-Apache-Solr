@@ -38,12 +38,23 @@ class Twitter:
         #print(tweets)
         return tweets
 
-    def get_tweets_by_lang_and_keyword(self):
+    def get_tweets_by_lang_and_keyword(self,keyword):
         '''
         Use search api to fetch keywords and language related tweets, use tweepy Cursor.
         :return: List
         '''
-        raise NotImplementedError
+        tweets = []
+        c=0
+        for tweet in tweepy.Cursor(self.api.search,q=keyword, screen_name=screen_name, count=25).items(25):                    
+            if tweet.retweeted :
+                c=c+1
+                if c<225:
+                    tweets.append(tweet._json)
+            else :
+                tweets.append(tweet._json)
+
+        #print(tweets)
+        return tweets
 
     def get_replies(self):
         '''
