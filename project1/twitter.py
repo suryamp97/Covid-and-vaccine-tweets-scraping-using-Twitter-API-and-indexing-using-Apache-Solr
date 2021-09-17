@@ -27,7 +27,7 @@ class Twitter:
         '''
         tweets = []
         c=0
-        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=10).items(10):                    
+        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=2500).items(2500):                    
             if tweet.retweeted :
                 c=c+1
                 if c<225:
