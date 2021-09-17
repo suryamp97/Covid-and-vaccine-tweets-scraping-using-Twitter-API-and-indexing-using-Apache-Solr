@@ -27,6 +27,9 @@ class Twitter:
         '''
         tweets = []
         for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=1500).items(1500):
+            c=0;
+            tw_json = tweet._json
+            
             tweets.append(tweet._json)
         #print(tweets)
         return tweets
