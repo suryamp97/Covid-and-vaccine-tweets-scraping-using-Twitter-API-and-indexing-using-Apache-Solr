@@ -60,7 +60,8 @@ class Twitter:
         '''
         tweets = []
         c=0
-        for keyword in keywords:
+        for m in range(len(keywords)):
+            keyword = keywords[m]["name"]
             for i in range(15):
                 for tweet in tweepy.Cursor(self.api.search,q=keyword, count=10).items(10): 
                     tj = tweet._json
