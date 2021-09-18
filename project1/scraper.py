@@ -94,7 +94,7 @@ def main():
         processed_tweets = []
         for tw in raw_tweets:
             processed_tweets.append(TWPreprocessor.preprocess(tw))
-        print(len(processed_tweets),keywords[i]["name"])
+        print("total reply tweets: ",len(processed_tweets))
         indexer.create_documents(processed_tweets)
 
 
