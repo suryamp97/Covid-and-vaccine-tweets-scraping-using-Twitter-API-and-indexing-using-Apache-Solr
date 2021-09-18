@@ -33,7 +33,8 @@ class TWPreprocessor:
             country="INDIA"
             #clean_text = re.sub(r"(http|https|www|@|#)\S+", " ", tweet["text"])
             tw["text_hi"]=_text_cleaner(tweet["text"])
-
+        
+        tw["replied_to_tweet_id"] = tweet["in_reply_to_status_id"]
         tw["id"]            = tweet["id"]
         tw["country"]       = country
         tw["tweet_lang"]    = tweet["lang"]
