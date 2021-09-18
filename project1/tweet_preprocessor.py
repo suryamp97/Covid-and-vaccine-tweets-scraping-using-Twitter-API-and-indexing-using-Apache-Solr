@@ -12,7 +12,7 @@ import preprocessor
 
 class TWPreprocessor:
     @classmethod
-    def preprocess(cls, tweet):
+    def preprocess(cls, tweet, context):
         '''
         Do tweet pre-processing before indexing, make sure all the field data types are in the format as asked in the project doc.
         :param tweet:
@@ -21,31 +21,40 @@ class TWPreprocessor:
         tw = {}
         lang = tweet["lang"]
         country=""
+        reply_text=""
         if lang=="en":
             country="USA"
             #clean_text = re.sub(r"(http|https|www|@|#)\S+", " ", tweet["text"])
             tw["text_en"]=_text_cleaner(tweet["text"])
+            reply_text = tw["text_en]
         if lang=="es":
             country="MEXICO"
             #clean_text = re.sub(r"(http|https|www|@|#)\S+", " ", tweet["text"])
             tw["text_es"]=_text_cleaner(tweet["text"])
+            reply_text = tw["text_es]
         if lang=="hi":
             country="INDIA"
             #clean_text = re.sub(r"(http|https|www|@|#)\S+", " ", tweet["text"])
             tw["text_hi"]=_text_cleaner(tweet["text"])
+            reply_text = tw["text_hi]
         
-        tw["replied_to_tweet_id"] = tweet["in_reply_to_status_id"]
+        # mandatory fields
         tw["id"]            = tweet["id"]
         tw["country"]       = country
         tw["tweet_lang"]    = tweet["lang"]
         tw["tweet_text"]    = tweet["text"]
         tw["tweet_date"]    = str(_get_tweet_date(tweet["created_at"]))
-        #print(tw["tweet_date"])
-        #print(type(tw["tweet_date"]))
         tw["verified"]      = tweet["user"]["verified"]
-        tw["poi_id"]        = tweet["user"]["id"]
-        tw["poi_name"]      = tweet["user"]["screen_name"]
-
+        
+        if context == "poi":
+            tw["poi_id"]        = tweet["user"]["id"]
+            tw["poi_name"]      = tweet["user"]["screen_name"]
+            
+        if context == "reply":
+            tw["replied_to_tweet_id"] = tweet["in_reply_to_status_id"]
+            tw["replied_to_user_id"]  = tweet["in_reply_to_user_id"]
+            tw["reply_text"] = reply_text
+        
         return tw
 
 
