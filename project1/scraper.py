@@ -89,7 +89,7 @@ def main():
 #             print("------------ process complete -----------------------------------")
 
     if reply_collection_knob:
-        raw_tweets = twitter.get_tweets_by_lang_and_keyword(keywords)  # pass args as needed
+        raw_tweets = twitter.get_replies(keywords)  # pass args as needed
 
         processed_tweets = []
         for tw in raw_tweets:
