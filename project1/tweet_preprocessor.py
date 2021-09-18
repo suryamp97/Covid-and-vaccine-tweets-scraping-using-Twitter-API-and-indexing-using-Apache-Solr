@@ -53,8 +53,13 @@ class TWPreprocessor:
         if context == "reply":
             tw["replied_to_tweet_id"] = tweet["in_reply_to_status_id"]
             tw["replied_to_user_id"]  = tweet["in_reply_to_user_id"]
-            tw["reply_text"] = reply_text
+            tw["reply_text"]          = reply_text
         
+        tw["hashtags"]          = _get_entities(tweet,'hashtags')
+        tw["mentions"]          = _get_entities(tweet,'mentions')
+        tw["tweet_urls"]        = _get_entities(tweet,'urls')
+        #tw["tweet_emoticons"]   = _get_entities(tweet,'symbols')                    
+                            
         return tw
 
 
@@ -75,6 +80,7 @@ def _get_entities(tweet, type=None):
 
         for url in urls:
             result.append(url['url'])
+                      
 
     return result
 
