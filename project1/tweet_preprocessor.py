@@ -26,17 +26,17 @@ class TWPreprocessor:
             country="USA"
             #clean_text = re.sub(r"(http|https|www|@|#)\S+", " ", tweet["text"])
             tw["text_en"]=_text_cleaner(tweet["text"])
-            reply_text = tw["text_en]
+            reply_text = tw["text_en"]
         if lang=="es":
             country="MEXICO"
             #clean_text = re.sub(r"(http|https|www|@|#)\S+", " ", tweet["text"])
             tw["text_es"]=_text_cleaner(tweet["text"])
-            reply_text = tw["text_es]
+            reply_text = tw["text_es"]
         if lang=="hi":
             country="INDIA"
             #clean_text = re.sub(r"(http|https|www|@|#)\S+", " ", tweet["text"])
             tw["text_hi"]=_text_cleaner(tweet["text"])
-            reply_text = tw["text_hi]
+            reply_text = tw["text_hi"]
         
         # mandatory fields
         tw["id"]            = tweet["id"]
