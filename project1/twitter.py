@@ -34,8 +34,6 @@ class Twitter:
                     tweets.append(tweet._json)
             else :
                 tweets.append(tweet._json)
-
-        #print(tweets)
         return tweets
 
     def get_tweets_by_lang_and_keyword(self,keyword):
@@ -52,14 +50,29 @@ class Twitter:
                     tweets.append(tweet._json)
             else :
                 tweets.append(tweet._json)
-
-        #print(tweets)
         return tweets
 
-    def get_replies(self):
+    def get_replies(self,keywords):
         '''
         Get replies for a particular tweet_id, use max_id and since_id.
         For more info: https://developer.twitter.com/en/docs/twitter-api/v1/tweets/timelines/guides/working-with-timelines
         :return: List
         '''
-        raise NotImplementedError
+        tweets = []
+        c=0
+        for keyword in keywords:
+            for i in range(15):
+                for tweet in tweepy.Cursor(self.api.search,q=keyword, count=10).items(10): 
+                    tj = tweet._json
+                    in_reply_to_status_id = tj["in_reply_to_status_id"]
+                    if in_reply_to_status_id is not None:
+                        if tweet.retweeted :
+                            c=c+1
+                            if c<225:
+                                tweets.append(tj)
+                        else :
+                            tweets.append(tj)
+        
+
+                
+        return tweets
