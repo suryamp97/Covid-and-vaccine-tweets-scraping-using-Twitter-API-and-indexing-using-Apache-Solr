@@ -523,5 +523,86 @@
       "country": "India",
       "finished": 0
     },
+    {
+      "id": 51,
+      "name": "anticuerpos",
+      "count": 100,
+      "lang": "es",
+      "country": "Mexico",
+      "finished": 0
+    },
+    {
+      "id": 52,
+      "name": "booster shot",
+      "count": 100,
+      "lang": "en",
+      "country": "USA",
+      "finished": 0
+    },
+    {
+      "id": 53,
+      "name": "vaccineshortage",
+      "count": 100,
+      "lang": "en",
+      "country": "USA",
+      "finished": 0
+    },
+    {
+      "id": 54,
+      "name": "campaña de vacunación",
+      "count": 100,
+      "lang": "es",
+      "country": "Mexico",
+      "finished": 0
+    },
+    {
+      "id": 55,
+      "name": "कोविशील्ड",
+      "count": 100,
+      "lang": "hi",
+      "country": "India",
+      "finished": 0
+    },
+    {
+      "id": 56,
+      "name": "vaccines",
+      "count": 100,
+      "lang": "en",
+      "country": "USA",
+      "finished": 0
+    },
+    {
+      "id": 57,
+      "name": "hydroxychloroquine",
+      "count": 100,
+      "lang": "en",
+      "country": "USA",
+      "finished": 0
+    },
+    {
+      "id": 58,
+      "name": "get vaccinated",
+      "count": 100,
+      "lang": "en",
+      "country": "USA",
+      "finished": 0
+    },
+    {
+      "id": 59,
+      "name": "dose",
+      "count": 100,
+      "lang": "en",
+      "country": "USA",
+      "finished": 0
+    },
+    {
+      "id": 60,
+      "name": "eficacia de la vacuna",
+      "count": 100,
+      "lang": "es",
+      "country": "Mexico",
+      "finished": 0
+    }
+    
   ]
 }
