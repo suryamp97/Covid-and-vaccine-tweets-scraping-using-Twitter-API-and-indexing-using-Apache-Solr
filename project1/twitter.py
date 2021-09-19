@@ -27,7 +27,7 @@ class Twitter:
         '''
         tweets = []
         c=0
-        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=10).items(10):    
+        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=2500).items(2500):    
             tj=tweet._json
             txt = tj["text"]
             if 'RT @' in txt:
@@ -45,7 +45,7 @@ class Twitter:
         '''
         tweets = []
         c=0
-        for tweet in tweepy.Cursor(self.api.search,q=keyword, count=50).items(50):  
+        for tweet in tweepy.Cursor(self.api.search,q=keyword, count=2500).items(2500):  
             tj=tweet._json
             txt = tj["text"]
             if 'RT @' in txt:
@@ -68,7 +68,7 @@ class Twitter:
             keyword = keywords[m]["name"]
             print("collecting reply tweets: ",keyword)
             c=0
-            for tweet in tweepy.Cursor(self.api.search,q=keyword, count=100).items(100): 
+            for tweet in tweepy.Cursor(self.api.search,q=keyword, count=2000).items(2000): 
                 tj = tweet._json
                 txt = tj["text"]
                 in_reply_to_status_id = tj["in_reply_to_status_id"]
