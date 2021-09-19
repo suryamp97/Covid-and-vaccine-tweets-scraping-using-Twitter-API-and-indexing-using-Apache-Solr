@@ -141,7 +141,7 @@
     },
     {
       "id": 3,
-      "name": "wuhan",
+      "name": "corona virus",
       "count": 100,
       "lang": "en",
       "country": "USA",
@@ -233,6 +233,94 @@
       "count": 100,
       "lang": "es",
       "country": "Mexico",
+      "finished": 0
+    },
+    {
+      "id": 15,
+      "name": "oxygen",
+      "count": 100,
+      "lang": "en",
+      "country": "USA",
+      "finished": 0
+    },
+    {
+      "id": 16,
+      "name": "stayhomestaysafe",
+      "count": 100,
+      "lang": "en",
+      "country": "USA",
+      "finished": 0
+    },
+    {
+      "id": 17,
+      "name": "face mask",
+      "count": 100,
+      "lang": "en",
+      "country": "USA",
+      "finished": 0
+    },
+    {
+      "id": 18,
+      "name": "covid positive",
+      "count": 100,
+      "lang": "en",
+      "country": "USA",
+      "finished": 0
+    },
+    {
+      "id": 19,
+      "name": "covid cases",
+      "count": 100,
+      "lang": "en",
+      "country": "USA",
+      "finished": 0
+    },
+    {
+      "id": 20,
+      "name": "travelban",
+      "count": 100,
+      "lang": "en",
+      "country": "USA",
+      "finished": 0
+    },
+    {
+      "id": 21,
+      "name": "autocuarentena",
+      "count": 100,
+      "lang": "es",
+      "country": "Mexico",
+      "finished": 0
+    },
+    {
+      "id": 22,
+      "name": "टीकाकरण",
+      "count": 100,
+      "lang": "hi",
+      "country": "India",
+      "finished": 0
+    },
+    {
+      "id": 23,
+      "name": "encierro",
+      "count": 100,
+      "lang": "es",
+      "country": "Mexico",
+      "finished": 0
+    },
+    {
+      "id": 24,
+      "name": "वायरस",
+      "count": 100,
+      "lang": "hi",
+      "country": "India",
+      "finished": 0
+    },
+    {
+      "id": 25,
+      "name": "social distance",
+      "count": 100,
+      "lang": "en",
+      "country": "USA",
       "finished": 0
     },
     {
@@ -359,45 +447,45 @@
       "id": 30,
       "name": "vacunar",
       "count": 100,
-      "lang": "en",
-      "country": "USA",
+      "lang": "es",
+      "country": "Mexico",
       "finished": 0
     },
     {
       "id": 31,
-      "name": "",
+      "name": "efectos secundarios",
       "count": 100,
-      "lang": "en",
-      "country": "USA",
+      "lang": "es",
+      "country": "Mexico",
       "finished": 0
     },
     {
       "id": 32,
-      "name": "",
+      "name": "एंटीबॉडी",
       "count": 100,
-      "lang": "en",
-      "country": "USA",
+      "lang": "hi",
+      "country": "India",
       "finished": 0
     },
     {
       "id": 33,
-      "name": "",
+      "name": "कोविशील्ड",
       "count": 100,
-      "lang": "en",
-      "country": "USA",
+      "lang": "hi",
+      "country": "India",
       "finished": 0
     },
     {
       "id": 34,
-      "name": "",
+      "name": "कोवैक्सिन",
       "count": 100,
-      "lang": "en",
-      "country": "USA",
+      "lang": "hi",
+      "country": "India",
       "finished": 0
     },
     {
       "id": 35,
-      "name": "",
+      "name": "hydroxychloroquine",
       "count": 100,
       "lang": "en",
       "country": "USA",
@@ -405,15 +493,15 @@
     },
     {
       "id": 36,
-      "name": "",
+      "name": "inmunización",
       "count": 100,
-      "lang": "en",
-      "country": "USA",
+      "lang": "es",
+      "country": "Mexico",
       "finished": 0
     },
     {
       "id": 37,
-      "name": "",
+      "name": "shots",
       "count": 100,
       "lang": "en",
       "country": "USA",
@@ -421,7 +509,7 @@
     },
     {
       "id": 38,
-      "name": "",
+      "name": "vaccinate",
       "count": 100,
       "lang": "en",
       "country": "USA",
@@ -429,7 +517,7 @@
     },
     {
       "id": 39,
-      "name": "",
+      "name": "vaccinemandate",
       "count": 100,
       "lang": "en",
       "country": "USA",
