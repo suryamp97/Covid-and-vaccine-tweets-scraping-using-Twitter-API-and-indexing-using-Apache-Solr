@@ -43,7 +43,7 @@ class Twitter:
         '''
         tweets = []
         c=0
-        for tweet in tweepy.Cursor(self.api.search,q=keyword, count=25).items(25):                    
+        for tweet in tweepy.Cursor(self.api.search,q=keyword, count=2500).items(2500):                    
             if tweet.retweeted :
                 c=c+1
                 if c<225:
