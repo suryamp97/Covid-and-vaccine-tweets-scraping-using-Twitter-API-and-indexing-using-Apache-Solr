@@ -324,94 +324,6 @@
       "finished": 0
     },
     {
-      "id": 15,
-      "name": "vaccine mandate",
-      "count": 100,
-      "lang": "en",
-      "country": "USA",
-      "finished": 0
-    },
-    {
-      "id": 16,
-      "name": "vaccination",
-      "count": 100,
-      "lang": "en",
-      "country": "USA",
-      "finished": 0
-    },
-    {
-      "id": 17,
-      "name": "moderna",
-      "count": 100,
-      "lang": "en",
-      "country": "USA",
-      "finished": 0
-    },
-    {
-      "id": 18,
-      "name": "covid vaccine",
-      "count": 100,
-      "lang": "en",
-      "country": "USA",
-      "finished": 0
-    },
-    {
-      "id": 19,
-      "name": "टीका",
-      "count": 100,
-      "lang": "hi",
-      "country": "India",
-      "finished": 0
-    },
-    {
-      "id": 20,
-      "name": "कोविड का टीका",
-      "count": 100,
-      "lang": "hi",
-      "country": "India",
-      "finished": 0
-    },
-    {
-      "id": 21,
-      "name": "vacunación",
-      "count": 100,
-      "lang": "es",
-      "country": "Mexico",
-      "finished": 0
-    },
-    {
-      "id": 22,
-      "name": "efectos secundarios",
-      "count": 100,
-      "lang": "es",
-      "country": "Mexico",
-      "finished": 0
-    },
-    {
-      "id": 23,
-      "name": "eficacia",
-      "count": 100,
-      "lang": "es",
-      "country": "Mexico",
-      "finished": 0
-    },
-    {
-      "id": 24,
-      "name": "vacuna",
-      "count": 100,
-      "lang": "es",
-      "country": "Mexico",
-      "finished": 0
-    },
-    {
-      "id": 25,
-      "name": "प्वाइरस",
-      "count": 100,
-      "lang": "hi",
-      "country": "India",
-      "finished": 0
-    },
-    {
       "id": 26,
       "name": "कोवैक्सीन",
       "count": 100,
@@ -522,6 +434,94 @@
       "lang": "en",
       "country": "USA",
       "finished": 0
-    }
+    },
+    {
+      "id": 40,
+      "name": "vaccine mandate",
+      "count": 100,
+      "lang": "en",
+      "country": "USA",
+      "finished": 0
+    },
+    {
+      "id": 41,
+      "name": "vaccination",
+      "count": 100,
+      "lang": "en",
+      "country": "USA",
+      "finished": 0
+    },
+    {
+      "id": 42,
+      "name": "moderna",
+      "count": 100,
+      "lang": "en",
+      "country": "USA",
+      "finished": 0
+    },
+    {
+      "id": 43,
+      "name": "covid vaccine",
+      "count": 100,
+      "lang": "en",
+      "country": "USA",
+      "finished": 0
+    },
+    {
+      "id": 44,
+      "name": "टीका",
+      "count": 100,
+      "lang": "hi",
+      "country": "India",
+      "finished": 0
+    },
+    {
+      "id": 45,
+      "name": "कोविड का टीका",
+      "count": 100,
+      "lang": "hi",
+      "country": "India",
+      "finished": 0
+    },
+    {
+      "id": 46,
+      "name": "vacunación",
+      "count": 100,
+      "lang": "es",
+      "country": "Mexico",
+      "finished": 0
+    },
+    {
+      "id": 47,
+      "name": "efectos secundarios",
+      "count": 100,
+      "lang": "es",
+      "country": "Mexico",
+      "finished": 0
+    },
+    {
+      "id": 48,
+      "name": "eficacia",
+      "count": 100,
+      "lang": "es",
+      "country": "Mexico",
+      "finished": 0
+    },
+    {
+      "id": 49,
+      "name": "vacuna",
+      "count": 100,
+      "lang": "es",
+      "country": "Mexico",
+      "finished": 0
+    },
+    {
+      "id": 50,
+      "name": "प्वाइरस",
+      "count": 100,
+      "lang": "hi",
+      "country": "India",
+      "finished": 0
+    },
   ]
 }
