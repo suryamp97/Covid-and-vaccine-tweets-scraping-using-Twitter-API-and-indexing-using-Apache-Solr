@@ -65,7 +65,7 @@ def main():
             #save_file(processed_tweets, f"poi_{pois[i]['id']}.pkl")
             print("------------ process complete -----------------------------------")
 
-    for i in range(14,len(keywords)):
+    for i in range(25,len(keywords)):
         if keywords[i]["finished"] == 0:
             print(f"---------- collecting tweets for keyword: {keywords[i]['name']}")
             keyword = keywords[i]['name']
