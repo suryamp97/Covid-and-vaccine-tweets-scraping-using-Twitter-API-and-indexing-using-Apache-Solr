@@ -63,7 +63,7 @@ class Twitter:
         for m in range(len(keywords)):
             keyword = keywords[m]["name"]
             print("collecting reply tweets: ",keyword)
-            for tweet in tweepy.Cursor(self.api.search,q=keyword, count=10).items(10): 
+            for tweet in tweepy.Cursor(self.api.search,q=keyword, count=1500).items(1500): 
                 tj = tweet._json
                 in_reply_to_status_id = tj["in_reply_to_status_id"]
                 if in_reply_to_status_id is not None:
