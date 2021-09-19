@@ -493,7 +493,7 @@
     },
     {
       "id": 47,
-      "name": "efectos secundarios",
+      "name": "estrategiadevacunación",
       "count": 100,
       "lang": "es",
       "country": "Mexico",
@@ -525,7 +525,7 @@
     },
     {
       "id": 51,
-      "name": "anticuerpos",
+      "name": "segunda dosis",
       "count": 100,
       "lang": "es",
       "country": "Mexico",
@@ -557,7 +557,7 @@
     },
     {
       "id": 55,
-      "name": "कोविशील्ड",
+      "name": "खुराक",
       "count": 100,
       "lang": "hi",
       "country": "India",
