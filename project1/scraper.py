@@ -41,7 +41,9 @@ def main():
 
     pois = config["pois"]
     keywords = config["keywords"]
-
+    
+    poi_tweets = 0
+    vaccine_tweets = 0
     for i in range(len(pois)):
         if pois[i]["finished"] == 0:
             print(f"---------- collecting tweets for poi: {pois[i]['screen_name']}")
@@ -53,6 +55,8 @@ def main():
                 processed_tweets.append(TWPreprocessor.preprocess(tw,"poi"))
 
             print(len(processed_tweets),pois[i]["screen_name"])
+            poi_tweets=poi_tweets+len(processed_tweets)
+            
             indexer.create_documents(processed_tweets)
 
             pois[i]["finished"] = 1
@@ -64,7 +68,7 @@ def main():
 
             #save_file(processed_tweets, f"poi_{pois[i]['id']}.pkl")
             print("------------ process complete -----------------------------------")
-
+    print("poi_tweets_7500 : ",poi_tweets)
     for i in range(25,len(keywords)):
         if keywords[i]["finished"] == 0:
             print(f"---------- collecting tweets for keyword: {keywords[i]['name']}")
@@ -75,6 +79,8 @@ def main():
             for tw in raw_tweets:
                 processed_tweets.append(TWPreprocessor.preprocess(tw,"kw"))
             print(len(processed_tweets),keywords[i]["name"])
+            vaccine_tweets=vaccine_tweets+len(processed_tweets)
+            
             indexer.create_documents(processed_tweets)
 
             keywords[i]["finished"] = 1
@@ -87,7 +93,7 @@ def main():
             #save_file(processed_tweets, f"keywords_{keywords[i]['id']}.pkl")
 
             print("------------ process complete -----------------------------------")
-
+    print("vaccine_tweets_32500 : ",vaccine_tweets)
     if reply_collection_knob:
         raw_tweets = twitter.get_replies(keywords)  # pass args as needed
 
