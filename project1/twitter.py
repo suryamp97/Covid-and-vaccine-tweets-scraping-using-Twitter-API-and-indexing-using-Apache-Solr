@@ -27,13 +27,15 @@ class Twitter:
         '''
         tweets = []
         c=0
-        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=2500).items(2500):                    
-            if tweet.retweeted :
+        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=10).items(10):    
+            tj=tweet._json
+            txt = tj["text"]
+            if 'RT @' in txt:
                 c=c+1
-                if c<225:
-                    tweets.append(tweet._json)
+                if c<200:
+                    tweets.append(tj)
             else :
-                tweets.append(tweet._json)
+                tweets.append(tj)
         return tweets
 
     def get_tweets_by_lang_and_keyword(self,keyword):
@@ -43,13 +45,15 @@ class Twitter:
         '''
         tweets = []
         c=0
-        for tweet in tweepy.Cursor(self.api.search,q=keyword, count=2500).items(2500):                    
-            if tweet.retweeted :
+        for tweet in tweepy.Cursor(self.api.search,q=keyword, count=50).items(50):  
+            tj=tweet._json
+            txt = tj["text"]
+            if 'RT @' in txt:
                 c=c+1
-                if c<225:
-                    tweets.append(tweet._json)
+                if c<200:
+                    tweets.append(tj)
             else :
-                tweets.append(tweet._json)
+                tweets.append(tj)
         return tweets
 
     def get_replies(self,keywords):
@@ -59,17 +63,19 @@ class Twitter:
         :return: List
         '''
         tweets = []
-        c=0
+        
         for m in range(len(keywords)):
             keyword = keywords[m]["name"]
             print("collecting reply tweets: ",keyword)
-            for tweet in tweepy.Cursor(self.api.search,q=keyword, count=1500).items(1500): 
+            c=0
+            for tweet in tweepy.Cursor(self.api.search,q=keyword, count=100).items(100): 
                 tj = tweet._json
+                txt = tj["text"]
                 in_reply_to_status_id = tj["in_reply_to_status_id"]
                 if in_reply_to_status_id is not None:
-                    if tweet.retweeted :
+                    if 'RT @' in txt :
                         c=c+1
-                        if c<225:
+                        if c<100:
                             tweets.append(tj)
                     else :
                         tweets.append(tj)
