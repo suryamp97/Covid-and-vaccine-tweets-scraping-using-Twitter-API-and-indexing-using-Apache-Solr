@@ -68,7 +68,7 @@ class Twitter:
             keyword = keywords[m]["name"]
             print("collecting reply tweets: ",keyword)
             c=0
-            for tweet in tweepy.Cursor(self.api.search,q=keyword, count=500).items(500): 
+            for tweet in tweepy.Cursor(self.api.search,q=keyword, count=1000).items(1000): 
                 tj = tweet._json
                 txt = tj["text"]
                 in_reply_to_status_id = tj["in_reply_to_status_id"]
