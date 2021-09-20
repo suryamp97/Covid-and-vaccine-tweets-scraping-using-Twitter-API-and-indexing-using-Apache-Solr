@@ -56,7 +56,7 @@ class Twitter:
                 tweets.append(tj)
         return tweets
 
-    def get_replies(self,keywords):
+    def get_replies(self,screen_name,keywords):
         '''
         Get replies for a particular tweet_id, use max_id and since_id.
         For more info: https://developer.twitter.com/en/docs/twitter-api/v1/tweets/timelines/guides/working-with-timelines
@@ -81,19 +81,17 @@ class Twitter:
         tweets = []
         c=0
         poi_twids = []
-        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=500).items(500):    
+        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=1000).items(1000):    
             tj=tweet._json
             txt = tj["text"]
-            if txt.startswith('RT @'):
-                c=c+1
-                if c<50:
+            if any(k in txt for k in keywords):
+                if txt.startswith('RT @'):
+                    c=c+1
+                    if c<50:
+                        poi_twids.append(tj['id'])
+                else :
                     poi_twids.append(tj['id'])
-            else :
-                poi_twids.append(tj['id'])
-        
-        for tweet in tweepy.Cursor(self.api.search_30_day,q=" ", screen_name=screen_name, count=500).items(500):
-            
-        
+        print(len(tw_ids))
 
                 
         return tweets
