@@ -79,20 +79,23 @@ class Twitter:
                         poi_twids.append(tj['id'])
                 else :
                     poi_twids.append(tj['id'])
+        
         print(len(poi_twids),screen_name)
-        for id_ in poi_twids:
-            for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name), since_id= id_ , count=20).items(20): 
-                tj = tweet._json
-                txt = tj["text"]
-                in_reply_to_status_id = tj["in_reply_to_status_id"]
+        
 
-                if in_reply_to_status_id == id_:
-                    if txt.startswith('RT @'):
-                        c=c+1
-                        if c<2:
-                            tweets.append(tj)
-                    else :
+        for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name), since_id= id_ , count=5000).items(5000): 
+            tj = tweet._json
+            txt = tj["text"]
+            in_reply_to_status_id = tj["in_reply_to_status_id"]
+
+            if in_reply_to_status_id in poi_twids:
+                if txt.startswith('RT @'):
+                    c=c+1
+                    if c<5:
                         tweets.append(tj)
+                else :
+                    tweets.append(tj)
+          print(len(tweets))
 
                 
         return tweets
