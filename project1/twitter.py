@@ -68,7 +68,7 @@ class Twitter:
         tweets = []
         c=0
         poi_twids = []
-        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=50).items(50):    
+        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=100).items(100):    
             tj=tweet._json
             print(tj["id"])
             txt = tj["text"]
