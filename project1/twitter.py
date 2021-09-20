@@ -29,7 +29,7 @@ class Twitter:
         c=0
         for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name,tweet_mode='extended', count=2000).items(2000):    
             tj=tweet._json
-            txt = tj["text"]
+            txt = tj["full_text"]
             if txt.startswith('RT @'):
                 c=c+1
                 if c<200:
@@ -47,7 +47,7 @@ class Twitter:
         c=0
         for tweet in tweepy.Cursor(self.api.search_30_day,q=keyword,tweet_mode='extended', count=2000).items(2000):  
             tj=tweet._json
-            txt = tj["text"]
+            txt = tj["full_text"]
             if txt.startswith('RT @'):
                 c=c+1
                 if c<200:
@@ -70,7 +70,7 @@ class Twitter:
         poi_twids = []
         for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name,tweet_mode='extended', count=100).items(100):    
             tj=tweet._json
-            txt = tj["text"]
+            txt = tj["full_text"]
             if any(k in txt for k in keys):
                 if txt.startswith('RT @'):
                     c=c+1
@@ -83,7 +83,7 @@ class Twitter:
             print("iterating: ",id_)
             for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name), since_id= id_ , count=20).items(20): 
                 tj = tweet._json
-                txt = tj["text"]
+                txt = tj["full_text"]
                 in_reply_to_status_id = tj["in_reply_to_status_id"]
                 
                 if in_reply_to_status_id == id_:
