@@ -98,7 +98,7 @@ def main():
         for i in range(len(pois)):
 
             screen_name = pois[i]['screen_name']
-            raw_tweets = twitter.get_replies(screen_name)  # pass args as needed
+            raw_tweets = twitter.get_replies(screen_name,keywords)  # pass args as needed
 
             processed_tweets = []
             for tw in raw_tweets:
