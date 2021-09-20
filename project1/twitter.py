@@ -80,10 +80,12 @@ class Twitter:
                     poi_twids.append(tj['id'])
         print(len(poi_twids),screen_name)
         for id_ in poi_twids:
+            print("iterating: ",id_)
             for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(id_), since_id= id_ , count=20).items(20): 
                 tj = tweet._json
                 txt = tj["text"]
                 in_reply_to_status_id = tj["in_reply_to_status_id"]
+                print(in_reply_to_status_id)
                 if in_reply_to_status_id is not None:
                     if False :
                         c=c+1
