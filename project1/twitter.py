@@ -84,7 +84,8 @@ class Twitter:
             print("iterating: ",id_)
             for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name), since_id= id_ , count=20).items(20): 
                 tj = tweet._json
-                txt = tweet.full_text
+                if (not tweet.retweeted ):
+                    txt = tweet.full_text
                 in_reply_to_status_id = tj["in_reply_to_status_id"]
                 
                 if in_reply_to_status_id == id_:
