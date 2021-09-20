@@ -27,7 +27,7 @@ class Twitter:
         '''
         tweets = []
         c=0
-        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=100).items(100):    
+        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=2000).items(2000):    
             tj=tweet._json
             txt = tj["text"]
             if txt.startswith('RT @'):
@@ -84,7 +84,7 @@ class Twitter:
         tweets = []
         c=0
         poi_twids = []
-        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=1000).items(1000):    
+        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=100).items(100):    
             tj=tweet._json
             txt = tj["text"]
             if any(k in txt for k in keys):
