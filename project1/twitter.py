@@ -78,13 +78,16 @@ class Twitter:
 #                             tweets.append(tj)
 #                     else :
 #                         tweets.append(tj)
+        keys = []
+        for i in range(len(keywords)):
+            keys.append(keywords[i]['name'])
         tweets = []
         c=0
         poi_twids = []
         for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=1000).items(1000):    
             tj=tweet._json
             txt = tj["text"]
-            if any(k in txt for k in keywords):
+            if any(k in txt for k in keys):
                 if txt.startswith('RT @'):
                     c=c+1
                     if c<50:
