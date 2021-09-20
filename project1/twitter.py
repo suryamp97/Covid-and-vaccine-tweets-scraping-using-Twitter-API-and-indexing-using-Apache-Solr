@@ -83,7 +83,7 @@ class Twitter:
         print(len(poi_twids),screen_name)
         
 
-        for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name), since_id= id_ , count=5000).items(5000): 
+        for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name), since_id= min(poi_twids) , count=5000).items(5000): 
             tj = tweet._json
             txt = tj["text"]
             in_reply_to_status_id = tj["in_reply_to_status_id"]
