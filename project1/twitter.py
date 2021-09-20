@@ -96,7 +96,8 @@ class Twitter:
                                 tweets.append(tj)
                         else :
                             tweets.append(tj)
-                pass:
+                except:
+                    pass
 
                 
         return tweets
