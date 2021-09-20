@@ -65,7 +65,7 @@ class Twitter:
         keys = []
         for i in range(len(keywords)):
             keys.append(keywords[i]['name'])
-        print(len(keys))
+
         tweets = []
         c=0
         poi_twids = []
