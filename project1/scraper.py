@@ -95,13 +95,21 @@ def main():
             print("------------ process complete -----------------------------------")
     print("vaccine_tweets_32500 : ",vaccine_tweets)
     if reply_collection_knob:
-        raw_tweets = twitter.get_replies(keywords)  # pass args as needed
+        for i in range(len(pois)):
 
-        processed_tweets = []
-        for tw in raw_tweets:
-            processed_tweets.append(TWPreprocessor.preprocess(tw,"reply"))
-        print("total reply tweets: ",len(processed_tweets))
-        indexer.create_documents(processed_tweets)
+            screen_name = pois[i]['screen_name']
+            raw_tweets = twitter.get_replies(screen_name)  # pass args as needed
+
+            processed_tweets = []
+            for tw in raw_tweets:
+                processed_tweets.append(TWPreprocessor.preprocess(tw,"poi"))
+
+            print(len(processed_tweets),pois[i]["screen_name"])
+            poi_tweets=poi_tweets+len(processed_tweets)
+
+            indexer.create_documents(processed_tweets)
+
+            print("------------ process complete -----------------------------------")
 
 
 if __name__ == "__main__":
