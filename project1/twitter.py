@@ -71,7 +71,6 @@ class Twitter:
         poi_twids = []
         for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=300).items(300):    
             tj=tweet._json
-            print(tj["id"])
             txt = tj["text"]
             if any(k in txt for k in keys):
                 if txt.startswith('RT @'):
