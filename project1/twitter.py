@@ -94,7 +94,7 @@ class Twitter:
                         poi_twids.append(tj['id'])
                 else :
                     poi_twids.append(tj['id'])
-        print(len(tw_ids))
+        print(len(poi_twids))
 
                 
         return tweets
