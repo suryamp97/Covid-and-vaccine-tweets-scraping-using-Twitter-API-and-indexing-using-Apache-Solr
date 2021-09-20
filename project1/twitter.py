@@ -95,7 +95,7 @@ class Twitter:
                         tweets.append(tj)
                 else :
                     tweets.append(tj)
-          print(len(tweets))
+        print(len(tweets))
 
                 
         return tweets
