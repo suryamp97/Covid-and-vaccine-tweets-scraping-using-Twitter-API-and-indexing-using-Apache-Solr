@@ -107,7 +107,7 @@ def main():
                 
             print("reply tweets count: ")
             print(len(processed_tweets),pois[i]["screen_name"])
-            vaccine_tweets=vaccine_tweets+len(processed_tweets)
+            reply_count=reply_count+len(processed_tweets)
             indexer.create_documents(processed_tweets)
 
             print("------------ process complete -----------------------------------")
