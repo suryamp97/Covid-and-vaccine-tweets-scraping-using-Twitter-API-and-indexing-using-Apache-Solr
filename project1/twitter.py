@@ -29,7 +29,7 @@ class Twitter:
         c=0
         for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=2000).items(2000):    
             tj=tweet._json
-            txt = tweet["text"]
+            txt = tj["text"]
             if txt.startswith('RT @'):
                 c=c+1
                 if c<200:
@@ -47,7 +47,7 @@ class Twitter:
         c=0
         for tweet in tweepy.Cursor(self.api.search_30_day,q=keyword, count=2000).items(2000):  
             tj=tweet._json
-            txt = tweet["text"]
+            txt = tj["text"]
             if txt.startswith('RT @'):
                 c=c+1
                 if c<200:
@@ -71,7 +71,7 @@ class Twitter:
         for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=50).items(50):    
             tj=tweet._json
             print(tj["id"])
-            txt = tweet["text"]
+            txt = tj["text"]
             if any(k in txt for k in keys):
                 if txt.startswith('RT @'):
                     c=c+1
@@ -85,7 +85,7 @@ class Twitter:
             for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name), since_id= id_ , count=20).items(20): 
                 tj = tweet._json
                 print(tweet.retweeted)
-                txt = tweet["text"]
+                txt = tj["text"]
                 in_reply_to_status_id = tj["in_reply_to_status_id"]
 
                 if in_reply_to_status_id == id_:
