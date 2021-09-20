@@ -69,7 +69,7 @@ class Twitter:
         tweets = []
         c=0
         poi_twids = []
-        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=300).items(300):    
+        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=1000).items(1000):    
             tj=tweet._json
             txt = tj["text"]
             if any(k in txt for k in keys):
@@ -95,7 +95,5 @@ class Twitter:
                         tweets.append(tj)
                 else :
                     tweets.append(tj)
-        print(len(tweets))
-
                 
         return tweets
