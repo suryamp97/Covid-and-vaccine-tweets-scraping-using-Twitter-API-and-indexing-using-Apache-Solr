@@ -25,24 +25,24 @@ class TWPreprocessor:
         if lang=="en":
             country="USA"
             #clean_text = re.sub(r"(http|https|www|@|#)\S+", " ", tweet["text"])
-            tw["text_en"]=_text_cleaner(tweet.full_text)
+            tw["text_en"]=_text_cleaner(tweet["text"])
             reply_text = tw["text_en"]
         if lang=="es":
             country="MEXICO"
             #clean_text = re.sub(r"(http|https|www|@|#)\S+", " ", tweet["text"])
-            tw["text_es"]=_text_cleaner(tweet.full_text)
+            tw["text_es"]=_text_cleaner(tweet["text"])
             reply_text = tw["text_es"]
         if lang=="hi":
             country="INDIA"
             #clean_text = re.sub(r"(http|https|www|@|#)\S+", " ", tweet["text"])
-            tw["text_hi"]=_text_cleaner(tweet.full_text)
+            tw["text_hi"]=_text_cleaner(tweet["text"])
             reply_text = tw["text_hi"]
         
         # mandatory fields
         tw["id"]            = tweet["id"]
         tw["country"]       = country
         tw["tweet_lang"]    = tweet["lang"]
-        tw["tweet_text"]    = tweet.full_text
+        tw["tweet_text"]    = tweet["text"]
         tw["tweet_date"]    = str(_get_tweet_date(tweet["created_at"]))
         tw["verified"]      = tweet["user"]["verified"]
         
