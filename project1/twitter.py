@@ -62,12 +62,25 @@ class Twitter:
         For more info: https://developer.twitter.com/en/docs/twitter-api/v1/tweets/timelines/guides/working-with-timelines
         :return: List
         '''
+        keys = []
+        for i in range(len(keywords)):
+            keys.append(keywords[i]['name'])
+        tweets = []
+        c=0
+        poi_twids = []
+        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=300).items(300):    
+            tj=tweet._json
+            txt = tj["text"]
+            if any(k in txt for k in keys):
+                if txt.startswith('RT @'):
+                    c=c+1
+                    if c<50:
+                        poi_twids.append(tj['id'])
+                else :
+                    poi_twids.append(tj['id'])
         
-#         for m in range(len(keywords)):
-#             keyword = keywords[m]["name"]
-#             print("collecting reply tweets: ",keyword)
-#             c=0
-#             for tweet in tweepy.Cursor(self.api.search,q=keyword, count=100).items(100): 
+#         for id_ in poi_twids:
+#             for tweet in tweepy.Cursor(self.api.search,q=" ", since_id= id_ , count=50).items(50): 
 #                 tj = tweet._json
 #                 txt = tj["text"]
 #                 in_reply_to_status_id = tj["in_reply_to_status_id"]
@@ -78,23 +91,6 @@ class Twitter:
 #                             tweets.append(tj)
 #                     else :
 #                         tweets.append(tj)
-        keys = []
-        for i in range(len(keywords)):
-            keys.append(keywords[i]['name'])
-        tweets = []
-        c=0
-        poi_twids = []
-        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=500).items(500):    
-            tj=tweet._json
-            txt = tj["text"]
-            if any(k in txt for k in keys):
-                if txt.startswith('RT @'):
-                    c=c+1
-                    if c<50:
-                        poi_twids.append(tj['id'])
-                else :
-                    poi_twids.append(tj['id'])
-        print(len(poi_twids))
 
                 
         return tweets
