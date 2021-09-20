@@ -68,7 +68,7 @@ class Twitter:
         tweets = []
         c=0
         poi_twids = []
-        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=200).items(200):    
+        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=100).items(100):    
             tj=tweet._json
             txt = tj["text"]
             if any(k in txt for k in keys):
@@ -80,7 +80,7 @@ class Twitter:
                     poi_twids.append(tj['id'])
         print(len(poi_twids),screen_name)
         for id_ in poi_twids:
-            for tweet in tweepy.Cursor(self.api.search,q="in_reply_to_status_id:$id_", since_id= id_ , count=20).items(20): 
+            for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(id_), since_id= id_ , count=20).items(20): 
                 tj = tweet._json
                 txt = tj["text"]
                 in_reply_to_status_id = tj["in_reply_to_status_id"]
