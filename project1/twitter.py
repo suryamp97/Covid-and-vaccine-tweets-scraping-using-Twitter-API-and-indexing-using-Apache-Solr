@@ -85,17 +85,18 @@ class Twitter:
             for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name), since_id= id_ , count=20).items(20): 
                 tj = tweet._json
                 print(tweet.retweeted)
-                if (not tweet.retweeted ):
+                try:
                     txt = tweet.retweeted_status.full_text
-                in_reply_to_status_id = tj["in_reply_to_status_id"]
-                
-                if in_reply_to_status_id == id_:
-                    if txt.startswith('RT @'):
-                        c=c+1
-                        if c<2:
+                    in_reply_to_status_id = tj["in_reply_to_status_id"]
+
+                    if in_reply_to_status_id == id_:
+                        if txt.startswith('RT @'):
+                            c=c+1
+                            if c<2:
+                                tweets.append(tj)
+                        else :
                             tweets.append(tj)
-                    else :
-                        tweets.append(tj)
+                pass:
 
                 
         return tweets
