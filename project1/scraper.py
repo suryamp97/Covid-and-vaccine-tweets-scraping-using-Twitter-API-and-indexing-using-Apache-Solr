@@ -105,7 +105,6 @@ def main():
                 processed_tweets.append(TWPreprocessor.preprocess(tw,"poi"))
 
             print(len(processed_tweets),pois[i]["screen_name"])
-            poi_tweets=poi_tweets+len(processed_tweets)
 
             indexer.create_documents(processed_tweets)
 
