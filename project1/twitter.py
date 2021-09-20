@@ -87,7 +87,7 @@ class Twitter:
             tj = tweet._json
             txt = tj["text"]
             in_reply_to_status_id = tj["in_reply_to_status_id"]
-
+            
             if in_reply_to_status_id in poi_twids:
                 if txt.startswith('RT @'):
                     c=c+1
