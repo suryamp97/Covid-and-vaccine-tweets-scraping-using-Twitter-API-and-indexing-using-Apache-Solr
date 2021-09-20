@@ -27,7 +27,7 @@ class Twitter:
         '''
         tweets = []
         c=0
-        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=1500).items(1500):    
+        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=100).items(100):    
             tj=tweet._json
             txt = tj["text"]
             if txt.startswith('RT @'):
