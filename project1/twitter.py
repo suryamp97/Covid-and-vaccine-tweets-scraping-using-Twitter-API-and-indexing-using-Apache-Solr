@@ -78,7 +78,7 @@ class Twitter:
                         poi_twids.append(tj['id'])
                 else :
                     poi_twids.append(tj['id'])
-        print(len(poi_twids,screen_name))
+        print(len(poi_twids),screen_name)
 #         for id_ in poi_twids:
 #             for tweet in tweepy.Cursor(self.api.search,q=" ", since_id= id_ , count=50).items(50): 
 #                 tj = tweet._json
