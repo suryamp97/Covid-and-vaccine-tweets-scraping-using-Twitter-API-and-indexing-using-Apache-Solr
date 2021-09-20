@@ -75,7 +75,7 @@ class Twitter:
             if any(k in txt for k in keys):
                 if txt.startswith('RT @'):
                     c=c+1
-                    if c<50:
+                    if c<2:
                         poi_twids.append(tj['id'])
                 else :
                     poi_twids.append(tj['id'])
