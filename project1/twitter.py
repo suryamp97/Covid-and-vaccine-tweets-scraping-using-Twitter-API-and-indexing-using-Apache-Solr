@@ -62,7 +62,6 @@ class Twitter:
         For more info: https://developer.twitter.com/en/docs/twitter-api/v1/tweets/timelines/guides/working-with-timelines
         :return: List
         '''
-        tweets = []
         
 #         for m in range(len(keywords)):
 #             keyword = keywords[m]["name"]
@@ -79,6 +78,21 @@ class Twitter:
 #                             tweets.append(tj)
 #                     else :
 #                         tweets.append(tj)
+        tweets = []
+        c=0
+        poi_twids = []
+        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=500).items(500):    
+            tj=tweet._json
+            txt = tj["text"]
+            if txt.startswith('RT @'):
+                c=c+1
+                if c<50:
+                    poi_twids.append(tj['id'])
+            else :
+                poi_twids.append(tj['id'])
+        
+        for tweet in tweepy.Cursor(self.api.search_30_day,q=" ", screen_name=screen_name, count=500).items(500):
+            
         
 
                 
