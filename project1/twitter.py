@@ -84,8 +84,8 @@ class Twitter:
                 tj = tweet._json
                 txt = tj["text"]
                 in_reply_to_status_id = tj["in_reply_to_status_id"]
-                if in_reply_to_status_id == id_:
-                    if txt.startswith('RT @') :
+                if in_reply_to_status_id is not None:
+                    if False :
                         c=c+1
                         if c<30:
                             tweets.append(tj)
