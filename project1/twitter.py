@@ -86,7 +86,7 @@ class Twitter:
                 tj = tweet._json
                 print(tweet.retweeted)
                 if (not tweet.retweeted ):
-                    txt = tweet.full_text
+                    txt = tweet.retweeted_status.full_text
                 in_reply_to_status_id = tj["in_reply_to_status_id"]
                 
                 if in_reply_to_status_id == id_:
