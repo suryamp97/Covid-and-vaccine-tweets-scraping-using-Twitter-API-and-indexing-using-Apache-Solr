@@ -27,7 +27,7 @@ class Twitter:
         '''
         tweets = []
         c=0
-        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=2000).items(2000):    
+        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name,tweet_mode='extended', count=2000).items(2000):    
             tj=tweet._json
             txt = tj["text"]
             if txt.startswith('RT @'):
@@ -45,7 +45,7 @@ class Twitter:
         '''
         tweets = []
         c=0
-        for tweet in tweepy.Cursor(self.api.search_30_day,q=keyword, count=2000).items(2000):  
+        for tweet in tweepy.Cursor(self.api.search_30_day,q=keyword,tweet_mode='extended', count=2000).items(2000):  
             tj=tweet._json
             txt = tj["text"]
             if txt.startswith('RT @'):
@@ -68,7 +68,7 @@ class Twitter:
         tweets = []
         c=0
         poi_twids = []
-        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=100).items(100):    
+        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name,tweet_mode='extended', count=100).items(100):    
             tj=tweet._json
             txt = tj["text"]
             if any(k in txt for k in keys):
@@ -81,15 +81,15 @@ class Twitter:
         print(len(poi_twids),screen_name)
         for id_ in poi_twids:
             print("iterating: ",id_)
-            for tweet in tweepy.Cursor(self.api.search,q=' '.format(id_), since_id= id_ , count=20).items(20): 
+            for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name), since_id= id_ , count=1000).items(20): 
                 tj = tweet._json
                 txt = tj["text"]
                 in_reply_to_status_id = tj["in_reply_to_status_id"]
-                print(in_reply_to_status_id)
-                if in_reply_to_status_id is not None:
-                    if False :
+                
+                if in_reply_to_status_id == id_:
+                    if txt.startswith('RT @'):
                         c=c+1
-                        if c<30:
+                        if c<2:
                             tweets.append(tj)
                     else :
                         tweets.append(tj)
