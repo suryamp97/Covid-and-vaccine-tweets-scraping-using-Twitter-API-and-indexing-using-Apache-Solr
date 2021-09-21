@@ -45,7 +45,7 @@ class Twitter:
         '''
         tweets = []
         c=0
-        for tweet in tweepy.Cursor(self.api.search_30_day,q=keyword, count=2000).items(2000):  
+        for tweet in tweepy.Cursor(self.api.search,q=keyword, count=2500).items(2500):  
             tj=tweet._json
             txt = tj["text"]
             if txt.startswith('RT @'):
