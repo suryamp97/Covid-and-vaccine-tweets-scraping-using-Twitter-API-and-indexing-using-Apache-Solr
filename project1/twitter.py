@@ -82,8 +82,13 @@ class Twitter:
         
         print(len(poi_twids),screen_name)
         
+        limit_per_id=0
+        
         for id_ in poi_twids:
+            limit_per_id=0
             for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name), since_id= id_ , count=1000).items(1000): 
+                if limit_per_id>15:
+                    break
                 tj = tweet._json
                 txt = tj["text"]
                 in_reply_to_status_id = tj["in_reply_to_status_id"]
@@ -93,7 +98,9 @@ class Twitter:
                         c=c+1
                         if c<5:
                             tweets.append(tj)
+                            limit_per_id+=1
                     else :
                         tweets.append(tj)
+                        limit_per_id+=1
                 
         return tweets
