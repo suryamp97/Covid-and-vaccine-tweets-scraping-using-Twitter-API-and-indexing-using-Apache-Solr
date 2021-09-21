@@ -52,7 +52,7 @@ class Twitter:
             if not verified:
                 if txt.startswith('RT @'):
                     c=c+1
-                    if c<200:
+                    if c<1000:
                         tweets.append(tj)
                 else :
                     tweets.append(tj)
