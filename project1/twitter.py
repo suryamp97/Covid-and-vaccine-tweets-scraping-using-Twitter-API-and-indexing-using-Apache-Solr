@@ -45,7 +45,7 @@ class Twitter:
         '''
         tweets = []
         c=0
-        for tweet in tweepy.Cursor(self.api.search,q=keyword, count=3000).items(3000):  
+        for tweet in tweepy.Cursor(self.api.search,q=keyword, count=5000).items(5000):  
             tj=tweet._json
             verified = tj["user"]["verified"]
             txt = tj["text"]
