@@ -10,7 +10,7 @@ from twitter import Twitter
 from tweet_preprocessor import TWPreprocessor
 from indexer import Indexer
 
-reply_collection_knob = False
+reply_collection_knob = True
 
 
 def read_config():
