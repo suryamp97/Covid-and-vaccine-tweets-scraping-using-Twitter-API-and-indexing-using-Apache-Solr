@@ -45,15 +45,17 @@ class Twitter:
         '''
         tweets = []
         c=0
-        for tweet in tweepy.Cursor(self.api.search,q=keyword, count=2500).items(2500):  
+        for tweet in tweepy.Cursor(self.api.search,q=keyword, count=3000).items(3000):  
             tj=tweet._json
+            verified = tj["user"]["verified"]
             txt = tj["text"]
-            if txt.startswith('RT @'):
-                c=c+1
-                if c<200:
+            if not verified:
+                if txt.startswith('RT @'):
+                    c=c+1
+                    if c<200:
+                        tweets.append(tj)
+                else :
                     tweets.append(tj)
-            else :
-                tweets.append(tj)
         return tweets
 
     def get_replies(self,screen_name,keywords):
