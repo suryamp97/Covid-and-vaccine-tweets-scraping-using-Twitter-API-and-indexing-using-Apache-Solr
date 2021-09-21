@@ -10,8 +10,7 @@ from twitter import Twitter
 from tweet_preprocessor import TWPreprocessor
 from indexer import Indexer
 
-reply_collection_knob = True
-
+reply_collection_knob = False
 
 def read_config():
     with open("config.json") as json_file:
