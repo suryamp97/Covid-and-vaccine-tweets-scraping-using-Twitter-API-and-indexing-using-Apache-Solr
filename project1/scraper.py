@@ -95,7 +95,7 @@ def main():
 #             print("------------ process complete -----------------------------------")
 #     print("vaccine_tweets_32500 : ",vaccine_tweets)
     if reply_collection_knob:
-        for i in range(1):
+        for i in range(25):
 
             screen_name = pois[i]['screen_name']
             raw_tweets = twitter.get_replies(screen_name,keywords)  # pass args as needed
@@ -106,9 +106,9 @@ def main():
                 
             print("reply tweets count: ",len(processed_tweets),pois[i]["screen_name"])
             reply_count=reply_count+len(processed_tweets)
-            with open('result.json', 'w') as fp:
-                json.dump(processed_tweets, fp)
-                print("replies dumped")
+#             with open('result.json', 'w') as fp:
+#                 json.dump(processed_tweets, fp)
+#                 print("replies dumped")
             indexer.create_documents(processed_tweets)
 
             print("------------ process complete -----------------------------------")
