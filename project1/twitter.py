@@ -88,8 +88,8 @@ class Twitter:
         for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name), since_id= min(poi_twids) , count=5000).items(5000): 
             tj = tweet._json
             txt = tj["text"]
-            in_reply_to_status_id = tj["in_reply_to_status_id"]
-            
+
+            in_reply_to_status_id = tj["in_reply_to_status_id"]            
             if in_reply_to_status_id in poi_twids:
                 if txt.startswith('RT @'):
                     c=c+1
