@@ -95,10 +95,10 @@ class Twitter:
                     c=c+1
                     if c<5:
                         tweets.append(tj)
-                        print(tj)
+                        #print(tj)
                 else :
                     tweets.append(tj)
-                    print(tj)
+                    #print(tj)
         print(len(tweets))
                 
         return tweets
