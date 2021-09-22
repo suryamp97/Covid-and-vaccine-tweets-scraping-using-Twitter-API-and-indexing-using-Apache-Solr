@@ -106,7 +106,9 @@ def main():
                 
             print("reply tweets count: ",len(processed_tweets),pois[i]["screen_name"])
             reply_count=reply_count+len(processed_tweets)
-
+            with open('result.json', 'w') as fp:
+                json.dump(processed_tweets, fp)
+                print("replies dumped")
             indexer.create_documents(processed_tweets)
 
             print("------------ process complete -----------------------------------")
