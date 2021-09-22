@@ -87,7 +87,7 @@ class Twitter:
 #         #for idd in poi_twids:
 #         print(idd)
 
-        for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name),count=2000).items(2000): 
+        for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name),count=10000).items(10000): 
 
             tj = tweet._json
             txt = tj["text"]                
