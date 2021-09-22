@@ -106,6 +106,7 @@ def main():
                 
             print("reply tweets count: ",len(processed_tweets),pois[i]["screen_name"])
             reply_count=reply_count+len(processed_tweets)
+            print(processed_tweets)
             indexer.create_documents(processed_tweets)
 
             print("------------ process complete -----------------------------------")
