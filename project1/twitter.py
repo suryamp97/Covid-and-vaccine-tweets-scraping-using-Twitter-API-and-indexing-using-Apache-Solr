@@ -70,41 +70,38 @@ class Twitter:
 
         tweets = []
         c=0
-        poi_twids = []
-        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=1500).items(3200):    
-            tj=tweet._json
-            txt = tj["text"]
-            if any(k in txt for k in keys):
-                if txt.startswith('RT @'):
-                    c=c+1
-                    if c<2:
-                        poi_twids.append(tj['id'])
-                else :
-                    poi_twids.append(tj['id'])
+#         poi_twids = []
+#         for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=1500).items(3200):    
+#             tj=tweet._json
+#             txt = tj["text"]
+#             if any(k in txt for k in keys):
+#                 if txt.startswith('RT @'):
+#                     c=c+1
+#                     if c<2:
+#                         poi_twids.append(tj['id'])
+#                 else :
+#                     poi_twids.append(tj['id'])
         
-        print("covid tweets",len(poi_twids),screen_name)
-        print("iterating...")
-        for idd in poi_twids:
-            print(idd)
-            lim =1
-            for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name), since_id= idd,count=100).items(500): 
-                if lim>10:
-                    break
-                tj = tweet._json
-                txt = tj["text"]                
-                in_reply_to_status_id = tj["in_reply_to_status_id"] 
-                
-                if in_reply_to_status_id in poi_twids:
-                    if txt.startswith('RT @'):
-                        c=c+1
-                        if c<5:
-                            tweets.append(tj)
-                            lim=lim+1
-                            #print(tj)
-                    else :
-                        tweets.append(tj)
-                        lim=lim+1
-                        #print(tj)
+#         print("covid tweets",len(poi_twids),screen_name)
+#         #print("iterating...")
+#         #for idd in poi_twids:
+#         print(idd)
+
+        for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name),count=2000).items(2000): 
+
+            tj = tweet._json
+            txt = tj["text"]                
+            #in_reply_to_status_id = tj["in_reply_to_status_id"] 
+
+            #if in_reply_to_status_id in poi_twids:
+            if txt.startswith('RT @'):
+                c=c+1
+                if c<5:
+                    tweets.append(tj)
+                    #print(tj)
+            else :
+                tweets.append(tj)
+                #print(tj)
             print(len(tweets))
                
 
