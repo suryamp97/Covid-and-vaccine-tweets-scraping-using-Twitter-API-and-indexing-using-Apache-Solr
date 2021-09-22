@@ -83,21 +83,29 @@ class Twitter:
                     poi_twids.append(tj['id'])
         
         print("covid tweets",len(poi_twids),screen_name)
-        
-
-        for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name), since_id= min(poi_twids),count=100000).items(100000): 
-            tj = tweet._json
-            txt = tj["text"]
-
-            in_reply_to_status_id = tj["in_reply_to_status_id"]            
-            if in_reply_to_status_id in poi_twids:
-                if txt.startswith('RT @'):
-                    c=c+1
-                    if c<5:
+        print("iterating...")
+        for idd in poi_twids:
+            print(idd)
+            lim =0
+            for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name), since_id= idd,count=500).items(500): 
+                if lim>15:
+                    break
+                tj = tweet._json
+                txt = tj["text"]                
+                in_reply_to_status_id = tj["in_reply_to_status_id"] 
+                
+                if in_reply_to_status_id in poi_twids:
+                    if txt.startswith('RT @'):
+                        c=c+1
+                        if c<5:
+                            tweets.append(tj)
+                            lim=lim+1
+                            #print(tj)
+                    else :
                         tweets.append(tj)
+                        lim=lim+1
                         #print(tj)
-                else :
-                    tweets.append(tj)
-                    #print(tj)
+            print(len(tweets))
+               
 
         return tweets
