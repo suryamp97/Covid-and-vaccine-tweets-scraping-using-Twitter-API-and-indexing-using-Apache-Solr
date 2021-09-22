@@ -10,7 +10,7 @@ from twitter import Twitter
 from tweet_preprocessor import TWPreprocessor
 from indexer import Indexer
 
-reply_collection_knob = False
+reply_collection_knob = True
 
 def read_config():
     with open("config.json") as json_file:
@@ -69,31 +69,31 @@ def main():
 #             #save_file(processed_tweets, f"poi_{pois[i]['id']}.pkl")
 #             print("------------ process complete -----------------------------------")
 #     print("poi_tweets_7500 : ",poi_tweets)
-    for i in range(25,len(keywords)):
-        if keywords[i]["finished"] == 0:
-            print(f"---------- collecting tweets for keyword: {keywords[i]['name']}")
-            keyword = keywords[i]['name']
-            raw_tweets = twitter.get_tweets_by_lang_and_keyword(keyword)  # pass args as needed
+#     for i in range(25,len(keywords)):
+#         if keywords[i]["finished"] == 0:
+#             print(f"---------- collecting tweets for keyword: {keywords[i]['name']}")
+#             keyword = keywords[i]['name']
+#             raw_tweets = twitter.get_tweets_by_lang_and_keyword(keyword)  # pass args as needed
 
-            processed_tweets = []
-            for tw in raw_tweets:
-                processed_tweets.append(TWPreprocessor.preprocess(tw,"kw"))
-            print(len(processed_tweets),keywords[i]["name"])
-            vaccine_tweets=vaccine_tweets+len(processed_tweets)
+#             processed_tweets = []
+#             for tw in raw_tweets:
+#                 processed_tweets.append(TWPreprocessor.preprocess(tw,"kw"))
+#             print(len(processed_tweets),keywords[i]["name"])
+#             vaccine_tweets=vaccine_tweets+len(processed_tweets)
             
-            indexer.create_documents(processed_tweets)
+#             indexer.create_documents(processed_tweets)
 
-            keywords[i]["finished"] = 1
-            keywords[i]["collected"] = len(processed_tweets)
+#             keywords[i]["finished"] = 1
+#             keywords[i]["collected"] = len(processed_tweets)
 
-            write_config({
-                "pois": pois, "keywords": keywords
-            })
+#             write_config({
+#                 "pois": pois, "keywords": keywords
+#             })
 
-            #save_file(processed_tweets, f"keywords_{keywords[i]['id']}.pkl")
+#             #save_file(processed_tweets, f"keywords_{keywords[i]['id']}.pkl")
 
-            print("------------ process complete -----------------------------------")
-    print("vaccine_tweets_32500 : ",vaccine_tweets)
+#             print("------------ process complete -----------------------------------")
+#     print("vaccine_tweets_32500 : ",vaccine_tweets)
     if reply_collection_knob:
         for i in range(3,4):
 
