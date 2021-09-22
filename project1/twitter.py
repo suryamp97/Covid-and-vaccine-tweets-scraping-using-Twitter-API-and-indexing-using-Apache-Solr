@@ -71,7 +71,7 @@ class Twitter:
         tweets = []
         c=0
         poi_twids = []
-        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=300).items(300):    
+        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=500).items(500):    
             tj=tweet._json
             txt = tj["text"]
             if any(k in txt for k in keys):
@@ -83,22 +83,25 @@ class Twitter:
                     poi_twids.append(tj['id'])
         
         print(len(poi_twids),screen_name)
+        c=0
+        limit_per_id=0
         
+        for id_ in poi_twids:
+            limit_per_id=0
+            for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name), since_id= id_ , count=1000).items(1000): 
+                if limit_per_id>15:
+                    break
+                tj = tweet._json
+                txt = tj["text"]
+                in_reply_to_status_id = tj["in_reply_to_status_id"]
 
-        for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name), since_id= min(poi_twids) , count=5000).items(5000): 
-            tj = tweet._json
-            txt = tj["text"]
-            in_reply_to_status_id = tj["in_reply_to_status_id"]
-            
-            if in_reply_to_status_id in poi_twids:
-                if txt.startswith('RT @'):
-                    c=c+1
-                    if c<5:
+                if in_reply_to_status_id in poi_twids:
+                    if txt.startswith('RT @'):
+                        c=c+1
+                        if c<5:
+                            tweets.append(tj)
+                            limit_per_id+=1
+                    else :
                         tweets.append(tj)
-                        #print(tj)
-                else :
-                    tweets.append(tj)
-                    #print(tj)
-        print(len(tweets))
-                
+                        limit_per_id+=1
         return tweets
