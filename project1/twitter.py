@@ -85,7 +85,7 @@ class Twitter:
         print("covid tweets",len(poi_twids),screen_name)
         
 
-        for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name), since_id= min(poi_twids) , count=50000).items(1000): 
+        for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name), since_id= min(poi_twids) , count=50000).items(50000): 
             tj = tweet._json
             txt = tj["text"]
 
