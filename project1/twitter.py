@@ -102,7 +102,7 @@ class Twitter:
             else :
                 tweets.append(tj)
                 #print(tj)
-            print(len(tweets))
+            
                
 
         return tweets
