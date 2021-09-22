@@ -86,9 +86,9 @@ class Twitter:
         print("iterating...")
         for idd in poi_twids:
             print(idd)
-            lim =0
+            lim =1
             for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name), since_id= idd,count=100).items(500): 
-                if lim>15:
+                if lim>10:
                     break
                 tj = tweet._json
                 txt = tj["text"]                
