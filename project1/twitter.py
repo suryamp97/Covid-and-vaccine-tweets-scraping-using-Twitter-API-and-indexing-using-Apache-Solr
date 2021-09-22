@@ -82,7 +82,7 @@ class Twitter:
                 else :
                     poi_twids.append(tj['id'])
         
-        print(len(poi_twids),screen_name)
+        print("covid tweets",len(poi_twids),screen_name)
         
 
         for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name), since_id= min(poi_twids) , count=5000).items(5000): 
@@ -99,5 +99,5 @@ class Twitter:
                 else :
                     tweets.append(tj)
                     #print(tj)
-        print(len(tweets))
+
         return tweets
