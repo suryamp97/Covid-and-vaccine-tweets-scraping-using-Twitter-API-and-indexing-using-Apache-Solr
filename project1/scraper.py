@@ -95,7 +95,7 @@ def main():
 #             print("------------ process complete -----------------------------------")
 #     print("vaccine_tweets_32500 : ",vaccine_tweets)
     if reply_collection_knob:
-        for i in range(7,8):
+        for i in range(len(pois)):
 
             screen_name = pois[i]['screen_name']
             raw_tweets = twitter.get_replies(screen_name,keywords)  # pass args as needed
