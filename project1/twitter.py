@@ -64,9 +64,9 @@ class Twitter:
         For more info: https://developer.twitter.com/en/docs/twitter-api/v1/tweets/timelines/guides/working-with-timelines
         :return: List
         '''
-        keys = []
-        for i in range(25):
-            keys.append(keywords[i]['name'])
+#         keys = []
+#         for i in range(25):
+#             keys.append(keywords[i]['name'])
 
         tweets = []
         c=0
