@@ -58,7 +58,7 @@ class Twitter:
                     tweets.append(tj)
         return tweets
 
-    def get_replies(self,screen_name,keywords):
+    def get_replies(self,pois,keywords):
         '''
         Get replies for a particular tweet_id, use max_id and since_id.
         For more info: https://developer.twitter.com/en/docs/twitter-api/v1/tweets/timelines/guides/working-with-timelines
