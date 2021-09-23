@@ -75,8 +75,8 @@ class Twitter:
         
         for idd in twids:
             for tweet in tweepy.Cursor(self.api.search,q='to:JoeBiden',max_id=idd+1,since_id=idd-1, count=5).items(5):
-                print(tweet)
                 tweets.append(tweet)
+        print("ss",len(tweets))
 #         for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=1500).items(1500):    
 #             tj=tweet._json
 #             txt = tj["text"]
