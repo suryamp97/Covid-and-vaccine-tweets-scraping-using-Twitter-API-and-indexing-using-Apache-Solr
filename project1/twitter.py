@@ -73,7 +73,7 @@ class Twitter:
         poi_twids = []
 
 
-        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=5000).items(5000):    
+        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=3200).items(32000):    
             tj=tweet._json
             txt = tj["text"]
             if any(k in txt for k in keys):
@@ -92,7 +92,7 @@ class Twitter:
         for i in range(len(poi_twids)):
             idd=poi_twids[i]
             lim = 0
-            for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name),since_id= idd,count=3000).items(3000): 
+            for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name),since_id= idd,count=5000).items(5000): 
                 if lim>9:
                     break
                 tj = tweet._json
