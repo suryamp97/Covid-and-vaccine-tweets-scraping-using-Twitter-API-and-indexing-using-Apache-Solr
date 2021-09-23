@@ -96,7 +96,7 @@ class Twitter:
                 txt = tj["text"]                
                 repts = tj["in_reply_to_status_id"] 
 
-                if repts == poi_twids:
+                if int(repts) == idd:
                     if txt.startswith('RT @'):
                         c=c+1
                         if c<5:
