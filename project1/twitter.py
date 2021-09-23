@@ -73,7 +73,7 @@ class Twitter:
         poi_twids = []
 
 
-        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=3200).items(32000):    
+        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=1500).items(1500):    
             tj=tweet._json
             txt = tj["text"]
             if any(k in txt for k in keys):
@@ -85,25 +85,25 @@ class Twitter:
                     poi_twids.append(tj['id'])
             
         
-        
+        print(poi_twids)
         
         print("covid tweets ",screen_name,len(poi_twids))
         
-        for i in range(len(poi_twids)):
-            idd=poi_twids[i]
-            lim = 0
-            for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name),since_id= idd,count=5000).items(5000): 
-                if lim>9:
-                    break
-                tj = tweet._json
-                txt = tj["text"]                
-                repts = tj["in_reply_to_status_id"] 
-                if repts == idd:
-                    if (not txt.startswith('RT @')):
-                        tweets.append(tj)
-                        lim=lim+1
+#         for i in range(len(poi_twids)):
+#             idd=poi_twids[i]
+#             lim = 0
+#             for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name),since_id= idd,count=5000).items(5000): 
+#                 if lim>9:
+#                     break
+#                 tj = tweet._json
+#                 txt = tj["text"]                
+#                 repts = tj["in_reply_to_status_id"] 
+#                 if repts == idd:
+#                     if (not txt.startswith('RT @')):
+#                         tweets.append(tj)
+#                         lim=lim+1
 
-            print(idd," ",len(tweets))     
+#             print(idd," ",len(tweets))     
                  
 #         print("tot: ",len(tweets))
         return tweets
