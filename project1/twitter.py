@@ -73,7 +73,7 @@ class Twitter:
         twids = [1435742326639538176,1435743948186718217,1435740397221957634,1435740270382002184,1435754550477168641,1436091066957148163,1435741310799994883,1435770947018051590,1435754919995248642,1435741059217178629]
 
         
-        tweets=self.api.statuses_lookup(id_=twids, count=100):
+        tweets=self.api.statuses_lookup(id_=twids, count=100)
         print("ss",len(tweets))
 #         for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=1500).items(1500):    
 #             tj=tweet._json
