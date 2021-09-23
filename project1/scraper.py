@@ -97,7 +97,7 @@ def main():
     if reply_collection_knob:
         for i in range(1):
             screen_name = pois[i]['screen_name']
-            raw_tweets = twitter.get_replies(pois,keywords)  # pass args as needed
+            raw_tweets = twitter.get_replies(screen_name,keywords)  # pass args as needed
 
             processed_tweets = []
             for tw in raw_tweets:
