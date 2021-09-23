@@ -89,14 +89,13 @@ class Twitter:
         
         print("covid tweets ","screen_name",len(poi_twids))
         
-        for i in range(1):
+        for i in range(len(poi_twids)):
             idd=poi_twids[i]
-            print(type(idd))
-            for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name),since_id= idd,count=1000).items(1000): 
+
+            for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name),since_id= idd,count=10000).items(10000): 
                 tj = tweet._json
                 txt = tj["text"]                
                 repts = tj["in_reply_to_status_id"] 
-                print(type(repts))
                 if repts == idd:
                     if txt.startswith('RT @'):
                         c=c+1
