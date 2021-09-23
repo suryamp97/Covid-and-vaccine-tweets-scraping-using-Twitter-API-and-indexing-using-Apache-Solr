@@ -83,11 +83,11 @@ class Twitter:
 #                     poi_twids.append(tj['id'])
         
 #         print(poi_twids)
-#         print("covid tweets",len(poi_twids),screen_name,len(set(poi_twids)))
-        #print("iterating...")
-        #for idd in poi_twids:
+        print("covid tweets",len(poi_twids),screen_name)
+
+
         
-#         for idd in po
+
 #         for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name),count=10000).items(10000): 
 
 #             tj = tweet._json
