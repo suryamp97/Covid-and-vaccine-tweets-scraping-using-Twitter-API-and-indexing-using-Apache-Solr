@@ -82,10 +82,10 @@ class Twitter:
                 else :
                     poi_twids.append(tj['id'])
         
-        print("covid tweets",len(poi_twids),screen_name)
+        print("covid tweets",len(poi_twids),screen_name,len(set(poi_twids)))
         #print("iterating...")
         #for idd in poi_twids:
-        print(idd)
+        
 #         for idd in po
 #         for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name),count=10000).items(10000): 
 
