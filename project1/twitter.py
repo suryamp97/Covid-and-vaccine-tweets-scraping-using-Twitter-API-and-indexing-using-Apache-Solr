@@ -87,7 +87,7 @@ class Twitter:
         
         
         
-        print("covid tweets ","screen_name",len(poi_twids))
+        print("covid tweets ",screen_name,len(poi_twids))
         
         for i in range(len(poi_twids)):
             idd=poi_twids[i]
