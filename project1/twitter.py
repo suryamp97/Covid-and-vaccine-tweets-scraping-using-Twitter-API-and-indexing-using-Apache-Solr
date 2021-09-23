@@ -87,23 +87,27 @@ class Twitter:
 
 
         
+        for idd in poi_twids:
+            lim=0
+            for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name),since_id= idd).items(500): 
+                if lim>9 :
+                    break
+                tj = tweet._json
+                txt = tj["text"]                
+                repts = tj["in_reply_to_status_id"] 
 
-#         for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name),count=10000).items(10000): 
-
-#             tj = tweet._json
-#             txt = tj["text"]                
-#             #in_reply_to_status_id = tj["in_reply_to_status_id"] 
-
-#             #if in_reply_to_status_id in poi_twids:
-#             if txt.startswith('RT @'):
-#                 c=c+1
-#                 if c<5:
-#                     tweets.append(tj)
-#                     #print(tj)
-#             else :
-#                 tweets.append(tj)
-#                 #print(tj)
-            
-               
-
+                if repts == poi_twids:
+                    if txt.startswith('RT @'):
+                        c=c+1
+                        if c<5:
+                            tweets.append(tj)
+                            lim=lim+1
+                            #print(tj)
+                    else :
+                        tweets.append(tj)
+                        lim=lim+1
+                        #print(tj)
+            print(idd," ",len(tweets))     
+                 
+        print("tot: ",len(tweets))
         return tweets
