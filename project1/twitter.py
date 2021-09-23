@@ -71,7 +71,7 @@ class Twitter:
         tweets = []
         c=0
         poi_twids = []
-        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=1500).items(1500):    
+        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=3000).items(3000):    
             tj=tweet._json
             txt = tj["text"]
             if any(k in txt for k in keys):
