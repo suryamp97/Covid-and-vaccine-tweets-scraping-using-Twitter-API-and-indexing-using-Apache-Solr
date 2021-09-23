@@ -91,18 +91,17 @@ class Twitter:
         
         for i in range(len(poi_twids)):
             idd=poi_twids[i]
-
+            lim = 0
             for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name),since_id= idd,count=10000).items(10000): 
+                if lim>9:
+                    break
                 tj = tweet._json
                 txt = tj["text"]                
                 repts = tj["in_reply_to_status_id"] 
                 if repts == idd:
-                    if txt.startswith('RT @'):
-                        c=c+1
-                        if c<5:
-                            tweets.append(tj)
-                    else :
+                    if (not txt.startswith('RT @')):
                         tweets.append(tj)
+                        lim=lim+1
 
             print(idd," ",len(tweets))     
                  
