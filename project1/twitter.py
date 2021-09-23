@@ -70,38 +70,38 @@ class Twitter:
 
         tweets = []
         c=0
-#         poi_twids = []
-#         for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=1500).items(3200):    
-#             tj=tweet._json
-#             txt = tj["text"]
-#             if any(k in txt for k in keys):
-#                 if txt.startswith('RT @'):
-#                     c=c+1
-#                     if c<2:
-#                         poi_twids.append(tj['id'])
-#                 else :
-#                     poi_twids.append(tj['id'])
+        poi_twids = []
+        for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=1500).items(1500):    
+            tj=tweet._json
+            txt = tj["text"]
+            if any(k in txt for k in keys):
+                if txt.startswith('RT @'):
+                    c=c+1
+                    if c<2:
+                        poi_twids.append(tj['id'])
+                else :
+                    poi_twids.append(tj['id'])
         
-#         print("covid tweets",len(poi_twids),screen_name)
-#         #print("iterating...")
-#         #for idd in poi_twids:
-#         print(idd)
+        print("covid tweets",len(poi_twids),screen_name)
+        #print("iterating...")
+        #for idd in poi_twids:
+        print(idd)
+#         for idd in po
+#         for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name),count=10000).items(10000): 
 
-        for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name),count=10000).items(10000): 
+#             tj = tweet._json
+#             txt = tj["text"]                
+#             #in_reply_to_status_id = tj["in_reply_to_status_id"] 
 
-            tj = tweet._json
-            txt = tj["text"]                
-            #in_reply_to_status_id = tj["in_reply_to_status_id"] 
-
-            #if in_reply_to_status_id in poi_twids:
-            if txt.startswith('RT @'):
-                c=c+1
-                if c<5:
-                    tweets.append(tj)
-                    #print(tj)
-            else :
-                tweets.append(tj)
-                #print(tj)
+#             #if in_reply_to_status_id in poi_twids:
+#             if txt.startswith('RT @'):
+#                 c=c+1
+#                 if c<5:
+#                     tweets.append(tj)
+#                     #print(tj)
+#             else :
+#                 tweets.append(tj)
+#                 #print(tj)
             
                
 
