@@ -89,7 +89,7 @@ class Twitter:
         
         for idd in poi_twids:
             lim=0
-            for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name),since_id= idd).items(500): 
+            for tweet in tweepy.Cursor(self.api.search,q='to:{}'.format(screen_name),since_id= idd,count=1000).items(1000): 
                 if lim>9 :
                     break
                 tj = tweet._json
