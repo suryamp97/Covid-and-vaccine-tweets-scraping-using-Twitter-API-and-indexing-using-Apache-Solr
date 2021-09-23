@@ -84,9 +84,12 @@ class Twitter:
                     else :
                         poi_twids.append(tj['id'])
             print(sc_name,i+1," complete")                
-
+        
+        print()
+        print(poi_twids)
+        print()
         print("covid tweets",len(poi_twids))
-
+        
 
         
 #         for idd in poi_twids:
