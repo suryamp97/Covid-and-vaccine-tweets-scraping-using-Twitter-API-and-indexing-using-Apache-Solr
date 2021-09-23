@@ -82,6 +82,7 @@ class Twitter:
                 else :
                     poi_twids.append(tj['id'])
         
+        print(poi_twids)
         print("covid tweets",len(poi_twids),screen_name,len(set(poi_twids)))
         #print("iterating...")
         #for idd in poi_twids:
