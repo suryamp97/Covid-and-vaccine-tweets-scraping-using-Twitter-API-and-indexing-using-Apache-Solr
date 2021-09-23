@@ -74,7 +74,7 @@ class Twitter:
 
         
         for idd in twids:
-            for tweet in tweepy.Cursor(self.api.statuses_lookup,id_=tiwds, count=100).items(100):
+            for tweet in tweepy.Cursor(self.api.statuses_lookup,id_=twids, count=100).items(100):
                 tweets.append(tweet)
         print("ss",len(tweets))
 #         for tweet in tweepy.Cursor(self.api.user_timeline, screen_name=screen_name, count=1500).items(1500):    
