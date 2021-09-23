@@ -102,7 +102,7 @@ def main():
         for tw in raw_tweets:
             processed_tweets.append(TWPreprocessor.preprocess(tw,"reply"))
 
-        print("reply tweets count: ",len(processed_tweets),pois[i]["screen_name"])
+        print("reply tweets count: ",len(processed_tweets))
         reply_count=reply_count+len(processed_tweets)
 #             with open('result.json', 'w') as fp:
 #                 json.dump(processed_tweets, fp)
