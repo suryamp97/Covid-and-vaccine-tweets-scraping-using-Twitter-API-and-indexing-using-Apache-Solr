@@ -11,7 +11,7 @@ import requests
 
 
 CORE_NAME = "final_core"
-AWS_IP = "3.139.237.57"
+AWS_IP = "localhost"
 
 
 # [CAUTION] :: Run this script once, i.e. during core creation
