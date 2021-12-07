@@ -6,6 +6,7 @@ Institute: University at Buffalo
 import os
 import pysolr
 import requests
+import json
 
 # https://tecadmin.net/install-apache-solr-on-ubuntu/
 
