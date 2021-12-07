@@ -238,9 +238,9 @@ class Indexer:
 
 if __name__ == "__main__":
     i = Indexer()
-    i.do_initial_setup()
-    i.add_fields()
-    #f = open("final_result2.json")
-    #doo = json.load(f)
-    #i.create_documents(doo)
+    #i.do_initial_setup()
+    #i.add_fields()
+    f = open("final_result2.json")
+    doo = json.load(f)
+    i.create_documents(doo)
 
