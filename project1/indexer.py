@@ -243,20 +243,20 @@ if __name__ == "__main__":
 #     i.add_fields()
     
     print("English tweets indexing..")
-    f = open("cleaned_english_tweets_topic_modeled.json")
+    f = open("final_english_tweets.json")
     doo = json.load(f)
     i.create_documents(doo)
     f.close()
     
     print("hindi tweets indexing..")
     
-    f1 = open("cleaned_hindi_converted_tweets_topic_modeled.json")
+    f1 = open("final_hindi_tweets.json")
     doo1 = json.load(f1)
     i.create_documents(doo1)
     f1.close()
     
     print("spanish tweets indexing..")
-    f2 = open("cleaned_spanish_tweets_topic_modeled.json")
+    f2 = open("final_spanish_tweets.json")
     doo2 = json.load(f2)
     i.create_documents(doo2)
     f2.close()
