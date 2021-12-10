@@ -11,7 +11,7 @@ import json
 # https://tecadmin.net/install-apache-solr-on-ubuntu/
 
 
-CORE_NAME = "final_core"
+CORE_NAME = "FINAL"
 AWS_IP = "localhost"
 
 
@@ -239,9 +239,28 @@ class Indexer:
 
 if __name__ == "__main__":
     i = Indexer()
-    #i.do_initial_setup()
-    #i.add_fields()
-    f = open("final_result2.json")
-    doo = json.load(f)
-    i.create_documents(doo)
+    i.do_initial_setup()
+    i.add_fields()
+    
+#     print("English tweets indexing..")
+#     f = open("cleaned_english_tweets_topic_modeled.json")
+#     doo = json.load(f)
+#     i.create_documents(doo)
+#     f.close()
+    
+#     print("hindi tweets indexing..")
+    
+#     f1 = open("cleaned_hindi_converted_tweets_topic_modeled.json")
+#     doo1 = json.load(f1)
+#     i.create_documents(doo1)
+#     f1.close()
+    
+#     print("spanish tweets indexing..")
+#     f2 = open("cleaned_spanish_tweets_topic_modeled.json")
+#     doo2 = json.load(f2)
+#     i.create_documents(doo2)
+#     f2.close()
+#     print("indexing complete")
+    
+    
 
